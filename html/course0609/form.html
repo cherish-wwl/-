@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <h1>HTML 表单</h1>
+    <h2>表单的作用：</h2>
+    <ol>
+        <li>在页面上创建文本域；用户可以输入文本</li>
+        <li>包含 文本域(textarea)、下拉列表、单选框(radio-buttons)、复选框(checkboxes)等等。</li>
+        <li>使用表单标签 &lt;form &gt; 来设置</li>
+    </ol>
+
+    <hr />
+    <h2>例1：文本域</h2>
+    
+    <br />
+    <form action="demo_form.php" method="post" οnsubmit="return save()">
+      First name: <input type="text" name="firstname" placeholder="请输入First name">
+
+      <br />
+      Last name: <input type="text" name="lastname" value="莉">
+
+      <br />
+      Password: <input type="password" name="pwd">
+
+      <br />
+      Radio: 
+      
+      <input type="radio" name="sex" value="male" id="Male"><label for="Male">Male </label> <br>
+      <input type="radio" name="sex" value="female" checked>Female
+
+      <br />
+      Checkbox:
+      <input type="checkbox" name="vehicle" id="bike" value="Bike" ><label for="bike">I have a bike</label> <br>
+      <input type="checkbox" name="vehicle" checked value="Car">I have a car  
+
+      <br />
+      下拉选：
+      <select name="cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab" selected>Saab</option>
+        <option value="fiat">Fiat</option>
+        <option value="audi">Audi</option>
+      </select>
+
+      <br />
+      <textarea rows="10" cols="30" maxlength="10" readonly autofocus>我是一个文本框。</textarea>
+      
+      <br />
+      上传文件：
+      <!-- accept 为用逗号隔开的 MIME 类型列表。 -->
+      <input type="file" name="file" accept="audio/*,video/*,image/*,.doc,.pdf">
+     
+      <br />
+      Submit 按钮
+      <input type="submit" value="Submit">
+      <pre>
+    
+      </pre>
+
+    </form> 
+    <script>
+      function save(e){
+        console.log('save')
+        return false;
+      }
+    </script>
+</body>
+</html>

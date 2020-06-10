@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /*  *星号 代表所有的意思 */
+    /* *{
+      padding: 0;
+      margin: 0;
+    } */
+
+    .border-1 {
+      border: 1px solid #ddd;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>CSS 选择器</h1>
+
+  <br />
+
+  <h2> class 选择器 &nbsp;&nbsp;(使用 . )</h2>
+  <br />
+  <div class="border-1">
+    <style>
+      /* class中 包含 aa 的*/
+      .aa {
+        height: 100px;
+      }
+
+      /* class中 即有 aa，又有 bb 的 */
+      .aa.bb {
+        background-color:powderblue;
+      }
+
+      /* 中间 空格 代表：在 '什么元素 ' 的下面的 '什么元素 '
+         aa下面 所有 class中有aa-1 的元素 （不限层级）
+       */
+      .aa .aa-1 {
+        color: pink;
+      }
+
+      /* 中间 逗号, 代表：'什么元素 ' 和 '什么元素 '
+         class中有bb 的元素 和 class中有cc 的元素
+       */
+      .bb, .cc{
+        color:purple;
+      }
+
+      .dd div {
+        height: 100px;
+        width: 100px;
+        color: #fff;
+        background-color: #000;
+      }
+      /* 中间 > 代表： 在 '什么元素 ' 的下面的 '子元素'（只包含子元素，不包含子元素的子元素） 
+        class中有dd 的元素 下面的 子元素中所有 div标签元素； (不包含div 中的 div 元素)
+      */
+      .dd > div {
+        height: 200px;
+        width: 200px;
+        color: #000;
+        background-color: pink;
+      }
+      /* 中间 + 代表： 在 '什么元素 ' 的右侧紧邻 的元素 
+        class中有ee 的元素 下面的 所有紧邻右侧元素为 p 的div 元素；
+      */
+      .ee div + p {
+        color: palegreen;
+      }
+      /* 
+        中间 ~ 代表：在 '什么元素 ' 之后的每一个 ‘什么元素’ （不包含 子集的子集）
+        选择p元素 之后的每一个 ul元素 
+       */
+      .ff div ~ p {
+        color: pink;
+      }
+    </style>
+    <div class="aa">
+      <p class="aa-1">我是aa下面的</p>
+    </div>
+    <div class="aa bb">
+      <p>我是bb下面的</p>
+    </div>
+    <div class="cc">
+      <p>我是cc下面的</p>
+    </div>
+    <br />
+    <hr />
+    <br />
+    <div class="dd">
+      <div>	
+        我是外面的div（
+        <div> 我是里面的div</div>
+      </div>
+      <p>我是一个p标签</p>
+    </div>
+    <br />
+    <hr />
+    <div class="ee">
+      <div>我是一个div元素(我右侧紧邻P标签)</div>
+      <p>我是一个p元素（我是绿色的）</p>
+      <br />
+      <p>我是一个p元素</p>
+      <div>我是一个div元素(我右侧没有紧邻P标签)</div>
+      <br />
+      <div>我是一个div元素 (我右侧紧邻P标签)</div>
+      <p>我是一个p元素我是绿色的）</p>
+    </div>
+    <br />
+    <hr />
+    <div class="ff">
+      <div>我是一个div元素</div>
+      <p>我是一个p元素</p>
+      <br />
+      <p>我是一个p元素</p>
+      <div>我是一个div元素</div>
+      <br />
+      <div>我是一个div元素 
+        <p> 我是p标签</p>
+      </div>
+      <p>
+        我是一个p元素
+      </p>
+    </div>
+    <br />
+  </div>
+  <br />
+  <br />
+  <h2> id 选择器 &nbsp;&nbsp;(使用 # )</h2>
+  <br />
+  <div class="border-1">
+    <style>
+      /* # 代表 id */
+      #idSelect{
+        height: 100px;
+        width: 100px;
+        background-color: peru;
+      }
+    </style>
+    <div id="idSelect">
+
+    </div>
+  </div>
+  <br />
+  <br />
+  <h2> 属性 选择器 &nbsp;&nbsp;(使用 [属性名] 或 [属性名 =|～=||=|^=|$=|*= 属性值] )</h2>
+  <pre>
+    =   :  为相等关系
+    ～=  : 为包含关系(单词)
+    |=   : 以什么开头的
+    ^=   : 以什么开头的
+    $=   :  以什么结尾的
+    *=   : 为包含关系(不限单词)
+  </pre>
+  <div class="border-1">
+    <style>
+      /* 代表 所有存在 name 属性的 元素 */
+      [name]{
+        height: 200px;
+        width: 400px;
+        background-color: #f8f8f8;
+      }
+      /* 代表 所有 name 属性值为att1的 元素 */
+      [name=attr1]{
+        background-color: paleturquoise;
+      }
+      div[username^=张]{
+        color: green;
+      }
+      /* 包含'李四'这个字符串 */
+      div[username*=李四]{
+        color: pink;
+      }
+      /* 包含'李四'这个单词 */
+      div[username~=李四]{
+        color: blue;
+      }
+    </style>
+    <div name></div>
+    <br />
+    <div name="attr1"></div>
+    <br />
+    <div name="attr2"></div>
+    <br />
+    <div username='张三' >我是张三</div>
+    <div username='我是 李四' >我是李四(空格代表是单词 即李四是一个单词，满足～=)</div>
+    <div username='我是李四' >我是李四</div>
+  </div>
+  <br />
+  <h2>a 链接</h2>
+  <pre>
+    :link  未访问的链接
+    :hover  鼠标悬停时的链接
+    :active 活动链接
+    :visited 已被访问的链接
+  </pre>
+  <style>
+    .a-link:link {
+      background-color: #36d8d1;
+    }
+    .a-visited:visited{
+      color: blue;
+    }
+    .a-active:active{
+      background-color: yellow;
+    }
+    .a-hover:hover{
+      color: yellow;
+    }
+  </style>
+  <br />
+  <div class="border-1">
+    <a class="a-link" href="http://www.baidu.com">我是为未点击的（请不要点击我）</a>
+    <br />
+    <a class="a-visited" href="http://www.baidu.com" target="_blank">我是被访问的(请点击) 点击后我是蓝色的</a>
+    <br />
+    <a class="a-active" href="http://www.baidu.com" target="_blank">活动链接被激活的短暂状态</a>
+    <br />
+    <a class="a-hover" href="http://www.baidu.com">鼠标悬停时</a>
+  </div>
+
+  <h2>:nth-child() | :first-child  | :last-child  | :not</h2>
+  <style>
+    /* .ul-area  下面的第一个li  */
+    .ul-area li:first-child{
+      color:teal;
+    }
+    /* .ul-area  下面的最后一个li  */
+    .ul-area li:last-child{
+      color: yellowgreen;
+    }
+    /* .ul-area  下面的所有第偶数个li  */
+    .ul-area li:nth-child(2n){
+      color: pink;
+    }
+     /* .ul-area2  下面的所有第奇数个li  */
+    .ul-area2 li:nth-child(2n + 1){
+      color: pink;
+    }
+
+     /* :not  不包含 关系 */
+    /*     
+    .ul-area2 li:not(.num7){
+      color:#000;
+    } */
+    
+  </style>
+  <div class="border-1">
+    <h4>ul-area</h4>
+    <ul class="ul-area">
+      <!-- <a>我是a标签</a> -->
+      <li>1111111</li>
+      <li>1111112</li>
+      <li>1111113</li>
+      <li>1111114</li>
+      <li>1111115</li>
+      <li>1111116</li>
+      <li>1111117</li>
+    </ul>
+    <br />
+    <h4>ul-area2</h4>
+    <br />
+    <ul class="ul-area2">
+      <li>1111111</li>
+      <li>1111112</li>
+      <li>1111113</li>
+      <li>1111114</li>
+      <li>1111115</li>
+      <li>1111116</li>
+      <li class="num7">1111117</li>
+    </ul>
+  </div>
+  
+  <h2>:after | :before</h2>
+  <br />
+  <br />
+  <style>
+    .pre::before{
+      content: 'pre';
+      color: pink;
+    }
+    .next:after{
+      content: 'next';
+      color:  blue;
+    }
+
+    .all::before{
+      content: 'pre';
+      color: pink;
+    }
+    .all:after{
+      content: 'next';
+      color:  blue;
+    }
+  </style>
+  <div class="border-1">
+
+    <div class="pre"> 我前面有（pre）</div>
+    <div class="next">我后面有（next）</div>
+    <div class="all">我前面有（pre）后面有（next）</div>
+
+  </div>
+
+  <h2>:first-of-type | :last-of-type | :only-of-type | :only-child |:nth-last-child(n) |:nth-of-type(n) |:nth-last-of-type(n)	</h2>
+  <pre>
+    具体指到类型
+
+    ：*-of-type 和 *-child 的区别
+    1. *-of-type 先找到所有满足条件的标签， 再定位 到位置
+        例1：li:first-of-type 
+        在父级元素下面的找到的 第一个li标签
+        例2：li:nth-of-type(2)
+        在父级元素下面的找到的 第二个li标签
+        例3：p:only-of-type
+        在父级元素下面的找到的 找到所有p标签，p标签的数量是否只有一个，如果是 则满足要求，渲染样式；
+
+    2: *-child 先定位到位置 再判断是否是满足条件的标签
+        例1：li:first-child
+        在父级元素下面的找到 第一个元素 判断是不是li标签，如果是 则满足要求，渲染样式；
+        例2：li:nth-child(2)
+        在父级元素下面的找到 第二个元素 判断是不是li标签，如果是 则满足要求，渲染样式；
+        例3：p:only-child
+        在父级元素下面的找到的 找到所有标签， 是否只有一个p元素，如果是 则满足要求，渲染样式；
+  </pre>
+  <style>
+    /* .type-ul-area li:first-child{
+      color: yellow;
+    } */
+    .type-ul-area li:first-of-type{
+      color: blue;
+    }
+    .type-ul-area li:last-of-type{
+      color: blue;
+    }
+
+
+    .type-ul-area2 a:only-of-type{
+      color: yellow;
+    }
+    .type-ul-area2 a:only-child{
+      color: blue;
+    }
+
+    .type-ul-area3 li:nth-last-child(2){
+      color: pink;
+    }
+    .type-ul-area3 li:nth-last-of-type(2){
+      color: yellow;
+    }
+
+    .type-ul-area3 li:nth-of-type(1){
+      color: green;
+    }
+    .type-ul-area3 li:nth-child(1){
+      /* 不生效， 第一个元素不是li 标签 */
+      color: aqua; 
+    }
+  </style>
+  <div class="border-1">
+      <ul class="type-ul-area">
+        <a>我是a 标签</a>
+        <li>111111 我是蓝色的</li>
+        <li>111111</li>
+        <li>111111</li>
+        <li>111111</li>
+        <li>111111</li>
+      </ul>
+      <br />
+      <hr />
+      <br />
+      <div class="type-ul-area2">
+        <div><a>111111</a><a>22222</a></div>
+        <div><a>111111</a><span>22222</span></div>
+        <div><a>111111</a></div>
+      </div>
+      <br />
+      <hr />
+      <br />
+      <ul class="type-ul-area3">
+        <a>我是 a 标签</a>
+        <li>
+          我是倒数的
+          <ul>
+            <a>我是 a 标签</a>
+            <li>我是倒数的</li>
+            <li>我是倒数的</li>
+            <li>我是倒数的</li>
+            <li>我是倒数的</li>
+            <li>我是倒数的</li>
+            <a>我是 a 标签</a>
+          </ul>
+        </li>
+        <li>我是倒数的</li>
+        <li>我是倒数的</li>
+        <li>我是倒数的</li>
+        <a>我是 a 标签</a>
+      </ul>
+  </div>
+</body>
+
+</html>
