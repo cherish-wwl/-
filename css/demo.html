@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .demo {
+      width: 200px;
+      padding-left: 100px;
+      padding-top: 10px;
+    }
+
+    .element {
+      width: 200px;
+      padding-top: 15px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .25s;
+    }
+
+    :checked~.element {
+      max-height: 666px;
+    }
+
+    :checked~.check-out {
+      display: block;
+    }
+
+    :checked~.check-in {
+      display: none;
+    }
+
+    .check-in,
+    .check-out {
+      color: blue;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    .check-out {
+      display: none;
+    }
+
+    /* -------------------------------- */
+
+    dot {
+      display: inline-block;
+      height: 1em;
+      line-height: 1;
+      text-align: left;
+      vertical-align: -.25em;
+      overflow: hidden;
+    }
+
+    dot::before {
+      display: block;
+      content: '...\A..\A.';
+      white-space: pre-wrap;
+      animation: dot 2s infinite step-start both;
+    }
+
+    @keyframes dot {
+      33% {
+        transform: translateY(-2em);
+      }
+
+      66% {
+        transform: translateY(-1em);
+      }
+    }
+
+    /* ----------------------------------- */
+    .icon-menu {
+      display: inline-block;
+      width: 140px;
+      height: 10px;
+      padding: 35px 0;
+      border-top: 10px solid;
+      border-bottom: 10px solid;
+      background-color: currentColor;
+      background-clip: content-box;
+      margin: 50px 0 0 100px;
+    }
+
+    .icon-dot {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      padding: 10px;
+      border: 10px solid;
+      border-radius: 50%;
+      background-color: currentColor;
+      background-clip: content-box;
+    }
+
+    /* ---------------------------- */
+    .add {
+      display: inline-block;
+      width: 76px;
+      height: 76px;
+      color: #ccc;
+      border: 2px dashed;
+      text-indent: -12em;
+      transition: color .25s;
+      position: relative;
+      overflow: hidden;
+      margin: 50px 100px;
+    }
+
+    .add:before,
+    .add:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+    }
+
+    .add:hover {
+      color: #34538b;
+    }
+
+    .add::before {
+      width: 20px;
+      border-top: 4px solid;
+      margin: -2px 0 0 -10px;
+    }
+
+    .add::after {
+      height: 20px;
+      border-left: 4px solid;
+      margin: -10px 0 0 -2px;
+    }
+    /* ---------------------------- */
+    .container {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, .5);
+      text-align: center;
+      white-space: nowrap;
+      z-index: 99;
+      display: none;
+    }
+
+    .container:after {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
+
+    .dialog {
+      background-color: #fff;
+      display: inline-block;
+      vertical-align: middle;
+      border-radius: 6px;
+      text-align: left;
+      white-space: normal;
+      width: 400px;
+      height: 250px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="demo">
+    <input type="checkbox" id="check" style="display:none">
+    <p>HTC 计划在 10 月 22 日推出区块链智能手机</p>
+    <div class="element">
+      <p>该公司一个有趣的发展方向就是决定推出名为 Exodus 的区块链智能手机 ... 该手机制造商在照片分享应用 Instagram 上为这个即将推出的区块链智能手机建造了一个新的页面</p>
+    </div>
+    <label for="check" class="check-in">更多↓</label>
+    <label for="check" class="check-out">收起↑</label>
+  </div>
+  <br />
+  <br />
+  <br />
+  <br />
+  正在加载中<dot>...</dot>
+  <br />
+  <br />
+  <br />
+  <br />
+  <i class="icon-menu"></i>
+  <i class="icon-dot"></i>
+  <br />
+  <br />
+  <br />
+  <br />
+  <a href class="add" title="继续上传">添加图片</a>
+  <br />
+  <br />
+  <br />
+  <br />
+  <div class="container">
+    <div class="dialog">
+      <div class="content">
+        我是内容
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
