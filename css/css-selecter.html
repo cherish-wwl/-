@@ -15,6 +15,11 @@
     .border-1 {
       border: 1px solid #ddd;
     }
+
+    :root {
+      padding: 0;
+      margin: 0;
+    }
   </style>
 </head>
 
@@ -28,26 +33,37 @@
   <div class="border-1">
     <style>
       /* class中 包含 aa 的*/
+      
+      /* 选择器 {
+
+      } */
+       
+      /* 设置字体颜色 */
+      /* .aa-1 {
+        
+        color: green;  
+      } */
+
       .aa {
         height: 100px;
       }
 
       /* class中 即有 aa，又有 bb 的 */
       .aa.bb {
-        background-color:powderblue;
+        background-color:#ddd;
       }
 
       /* 中间 空格 代表：在 '什么元素 ' 的下面的 '什么元素 '
          aa下面 所有 class中有aa-1 的元素 （不限层级）
        */
-      .aa .aa-1 {
+      /* .aa .aa-1 {
         color: pink;
-      }
+      } */
 
       /* 中间 逗号, 代表：'什么元素 ' 和 '什么元素 '
          class中有bb 的元素 和 class中有cc 的元素
        */
-      .bb, .cc{
+      .bb,.cc{
         color:purple;
       }
 
@@ -81,8 +97,11 @@
       }
     </style>
     <div class="aa">
-      <p class="aa-1">我是aa下面的</p>
+      <p class="aa-1">我是aa下面的1</p>
+      <p class="aa-1">我是aa下面的2</p>
+      <p class="aa-1">我是aa下面的3</p>
     </div>
+    <p class="aa-1">我是aa下面的3</p>
     <div class="aa bb">
       <p>我是bb下面的</p>
     </div>
@@ -104,6 +123,7 @@
     <div class="ee">
       <div>我是一个div元素(我右侧紧邻P标签)</div>
       <p>我是一个p元素（我是绿色的）</p>
+      <p>我是一个p元素</p>
       <br />
       <p>我是一个p元素</p>
       <div>我是一个div元素(我右侧没有紧邻P标签)</div>
@@ -120,7 +140,8 @@
       <p>我是一个p元素</p>
       <div>我是一个div元素</div>
       <br />
-      <div>我是一个div元素 
+      <div>
+        <div>我是一个div元素 </div>
         <p> 我是p标签</p>
       </div>
       <p>
@@ -139,10 +160,18 @@
       #idSelect{
         height: 100px;
         width: 100px;
-        background-color: peru;
+        background-color: yellow;
       }
+      .idSelect{
+        background-color: red;
+      }
+      .idSelect{
+        background-color: green;
+      }
+    
+    
     </style>
-    <div id="idSelect">
+    <div id="idSelect" class="idSelect">
 
     </div>
   </div>
@@ -187,7 +216,7 @@
     <br />
     <div name="attr2"></div>
     <br />
-    <div username='张三' >我是张三</div>
+    <div username='张三李四' >我是张三</div>
     <div username='我是 李四' >我是李四(空格代表是单词 即李四是一个单词，满足～=)</div>
     <div username='我是李四' >我是李四</div>
   </div>
@@ -244,9 +273,17 @@
     }
 
      /* :not  不包含 关系 */
-    /*     
-    .ul-area2 li:not(.num7){
+        
+    /* .ul-area2 li:not(.num7){
       color:#000;
+    } */
+
+    /* .ul-area2 li:last-child {
+      border-bottom: none;
+    } */
+
+    /* .ul-area2 li:not(:last-child) {
+      border-bottom: 1px solid #000;
     } */
     
   </style>
@@ -328,9 +365,9 @@
         在父级元素下面的找到的 找到所有标签， 是否只有一个p元素，如果是 则满足要求，渲染样式；
   </pre>
   <style>
-    /* .type-ul-area li:first-child{
+    .type-ul-area li:first-child{
       color: yellow;
-    } */
+    }
     .type-ul-area li:first-of-type{
       color: blue;
     }
