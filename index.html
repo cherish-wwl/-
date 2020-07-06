@@ -1,11 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
-  <h1>Hello</h1>
+
+  <script>
+    function stopDefault(e) {
+      if (e && e.preventDefault)
+        e.preventDefault();
+      else
+        window.event.returnValue = false;
+
+      return false;
+    }
+  </script>
+
+
+  <input type="button" id="btn_test" req="f" value="Click" />
+  <a href="http://www.baidu.com" id="testLink">百度</a>
+
+  <script>
+    var test = document.getElementById('testLink');
+    test.onclick = function (e) {
+      alert('我的链接地址是：' + this.href + ', 但是我不会跳转。');
+      stopDefault(e);
+    }
+    document.getElementById('btn_test').onclick = function (e) {
+      window.location.href = "http://www.baidu.com"
+    }
+    window.addEventListener("popstate", function (e) {
+      console.log(e)
+      window.event.returnValue=false; 
+    },false)
+
+  </script>
 </body>
+
 </html>
