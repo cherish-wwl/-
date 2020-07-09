@@ -10,7 +10,7 @@ var consumer_key =
   "dj0yJmk9S2JFWHUyVUNheDlrJmQ9WVdrOWJsTmhXbms1TlRRbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PWY0";
 var consumer_secret = "694888415c6f1aef4fa1d72b253cfbabf861807f";
 var concat = "&";
-var query = { location: "china,ca", format: "json" };
+var query = { location: "sunnyvale,ca", format: "json" };
 var oauth = {
   oauth_consumer_key: consumer_key,
   oauth_nonce: Math.random().toString(36).substring(2),
