@@ -1,0 +1,115 @@
+
+*{
+  padding: 0;
+  margin: 0;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei, sans-serif;
+  font-size: 15px;
+  color: #1a1a1a;
+  min-height: 100vh;
+}
+input:focus{
+  outline: none;
+}
+
+.text-center{
+  text-align:center;
+}
+.container{
+  background: url(../images/sky.jpg) no-repeat #ffffff;
+  height: 100%;
+  background-position: center;
+  background-size: 100% 100%;
+  position: relative;
+}
+footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, .4);
+  color: #ffffff;
+  font-size: 12px;
+  line-height: 2.5;
+}
+.search-box{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%,-50%);
+  color: #ffffff;
+  padding: 60px 40px;
+  border-radius: 5px;
+  z-index: 9999;
+}
+.search-box h1{
+    font-size: 50px;
+    margin-bottom: 50px;
+}
+.search-box .weather-input{
+  height: 70px;
+  font-size: 26px;
+  width: 500px;
+  background-color: #ffffff;
+  border: none;
+  padding-left: 20px;
+}
+.search-box .form-label{
+  font-size: 20px;
+}
+.search-box .tools{
+  margin-top: 50px;
+
+}
+.search-box .search-btn{
+  border: none;
+  padding: 15px 25px;
+  font-size: 20px;
+  background-color: #23d4a3;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.weather-swiper-box{
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+}
+.swiper-container {
+  width: 100%;
+  height: 150px;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  width: 300px;
+  background: #fff;
+  position: relative;
+}
+.swiper-slide .s_bg{
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide .mask{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, .4);
+  color: rgba(255,255,255,.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.swiper-slide .mask .text{
+  margin: 10px 0;
+}
