@@ -19,10 +19,17 @@
         <form class="weather-form">
           <div class="from-item-line text-center">
             <!-- <span class="form-label">City Name:</span> -->
-            <input class="weather-input" type="text" placeholder="Enter Place Or City " />
+            <input class="weather-input" id="cityInput" type="text" placeholder="Enter Place Or City " />
+            <p class="error" id="error"></p>
           </div>
           <div class="from-item-line text-center tools">
             <button type="button" class="search-btn" id="search">Search</button>
+          </div>
+          <div>
+            <p class="mt-2">Current City:&nbsp;&nbsp;<span class="info-item" id="city"></span></p>
+            <p class="mt-2">Current Country:&nbsp;&nbsp;<span class="info-item" id="country"></span></p>
+            <p class="mt-2">Current Region:&nbsp;&nbsp;<span class="info-item" id="region"></span></p>
+            <p class="mt-2">Lat:&nbsp;&nbsp;<span class="info-item" id="lat"></span>&nbsp;&nbsp;&nbsp;&nbsp;long:&nbsp;&nbsp;<span class="info-item" id="long"></span></p>
           </div>
         </form>
       </div>

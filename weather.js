@@ -10,7 +10,7 @@ var consumer_key =
   "dj0yJmk9S2JFWHUyVUNheDlrJmQ9WVdrOWJsTmhXbms1TlRRbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PWY0";
 var consumer_secret = "694888415c6f1aef4fa1d72b253cfbabf861807f";
 var concat = "&";
-var query = { location: "sunnyvale,ca", format: "json" };
+var query = { location: "sunnyvale,ca", format: "json", u:'u' };
 var oauth = {
   oauth_consumer_key: consumer_key,
   oauth_nonce: Math.random().toString(36).substring(2),
@@ -18,7 +18,6 @@ var oauth = {
   oauth_timestamp: parseInt(new Date().getTime() / 1000).toString(),
   oauth_version: "1.0",
 };
-
 
 var merged = {};
 $.extend(merged, query, oauth);
@@ -48,18 +47,22 @@ var auth_header =
     })
     .join(",");
 
-$.ajax({
-  url: url + "?" + $.param(query),
-  headers: {
-    Authorization: auth_header,
-    "X-Yahoo-App-Id": app_id,
-  },
-  method: "GET",
-  success: function (data) {
-    // console.log(data);
-    initSwiper(data.forecasts);
-  },
-});
+refreshWeather(query)
+function refreshWeather(query){
+  $.ajax({
+    url: url + "?" + $.param(query),
+    headers: {
+      Authorization: auth_header,
+      "X-Yahoo-App-Id": app_id,
+    },
+    method: "GET",
+    success: function (data) {
+      $("#").html()
+      // console.log(data);
+      initSwiper(data.forecasts);
+    },
+  });
+}
 
 function initSwiper(data) {
   var toHtml = function (item, index) {
@@ -103,7 +106,22 @@ function initSwiper(data) {
   });
 }
 $(document).ready(function () {
-  $("#search").click(function(){
-    alert("please waiting")
-  })
+  $("#search").click(function () {
+    alert("please waiting");
+  });
 });
+window.addEventListener(
+  "load",
+  function () {
+    if (navigator.geolocation) {
+      navigator.geolocation.watchPosition(update);
+    }
+  },
+  false
+);
+
+function update(position) {
+  var lat = position.coords.latitude;
+  var lng = position.coords.longitude;
+  console.log("维度:" + lat + ", 经度:" + lng);
+}

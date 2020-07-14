@@ -114,3 +114,16 @@ footer{
 .swiper-slide .mask .text{
   margin: 10px 0;
 }
+
+#city{
+  text-transform:capitalize;
+}
+
+.mt-2{
+  margin-top: 10px;
+}
+
+.error{
+  text-align: left;
+  color: red;
+}
