@@ -139,7 +139,9 @@ window.addEventListener(
   "load",
   function () {
     if (navigator.geolocation) {
-      navigator.geolocation.watchPosition(update);
+      navigator.geolocation.getCurrentPosition(update,function(err){
+        console.log(err)
+      });
     }
   },
   false
