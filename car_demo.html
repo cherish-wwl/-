@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js"></script>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <title>Document</title>
+  <style>
+    html,body{
+      height: 100%;
+    }
+    *{
+      padding:0;
+      margin:0;
+    }
+    html{
+      background-color: #ddd;
+    }
+    /* header  --start*/
+    .header{
+      background-color:#fff;
+      transition: 800ms;
+    }
+    .hide .header{
+      position: relative;
+      transform: translateY(-100%);
+    }
+     /* header  --end*/
+    /* 小汽车区域  --start */
+    .cars-container {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    .swiper-container{
+      width: 100%;
+    }
+    .swiper-slide{
+      width: 150px;
+    }
+    .car_item{
+      background-color: #fff;
+      border-radius: 5px;
+      padding:10px 20px;
+      display: block;
+      text-decoration: none;
+      color:#000;
+    }
+    .car_item:hover, .car_item:active{
+      color:#000;
+    }
+    .car_item.active{
+     /* 使用 */
+      animation:car_click 1s ;  
+    }
+    /* 小汽车区域  --end  */
+    /* 弹出框  --start */
+    .popup_box{
+      position: fixed;
+      top: 100%;
+      bottom: 0;
+      z-index: 999;
+      left: 0;
+      right: 0;
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+      overflow: hidden;
+      
+    }
+    .popup_body{
+      background-color: #fff;
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      height: 500px;
+    }
+      /* 定义弹窗显示时动画 */
+    .popup_box.show{
+      top: 0;
+      transition: top 500ms;
+      transition-delay: 200ms;
+    }
+    .popup_box.show .popup_body{
+      animation:popup 1s;
+      
+    }
+
+    .popup_box.show h1{
+      animation: fadeUp 500ms;
+      animation-delay: 1s;
+      opacity: 0;
+      animation-fill-mode: forwards;
+    }
+    .popup_box.show h2{
+      animation: fadeUp 500ms;
+      animation-delay: 1.2s;
+      opacity: 0;
+      animation-fill-mode: forwards;
+    }
+    .popup_box.show h3{
+      animation: fadeUp 500ms;
+      animation-delay: 1.4s;
+      opacity: 0;
+      animation-fill-mode: forwards;
+    }
+    .popup_box.show h4{
+      animation: fadeUp 500ms;
+      animation-delay: 1.6s;
+      opacity: 0;
+      animation-fill-mode: forwards;
+    }
+     /* 定义弹窗隐藏时动画 */
+     .popup_box.hide{
+      transition: top 500ms;
+    }
+    /* 弹出框  --end */
+   .main{
+     text-align: center;
+   }
+   
+  
+    /* 定义 动画*/
+    @keyframes car_click {
+        50% {
+          transform: scale(.5); 
+        }
+        90% {
+          transform: scale(.8); 
+        }
+
+        100% {
+          transform: scale(1); 
+        }
+    }
+    @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(100%);
+      }
+      100% {
+        opacity: 1;
+        transform: none;
+      }
+    }
+   
+    @keyframes popup {
+        0% {
+          display: none;
+          height: 100px;
+        }
+
+        100% {
+          display: block;
+          height: 500px;
+        }
+    }
+  </style>
+</head>
+<body>
+  <div id="app" :class="{'hide': popup}">
+    <header class="header" >
+      <h1> this is header</h1>
+      <p> this is text </p>
+    </header>
+    <div class="main">
+    
+    </div>
+    <div class="cars-container">
+      <!-- 组件 -->
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+      <!-- 组件 -->
+
+
+      <!-- 车子 start -->
+            <div class="car_item" :class="{'active':active == 1}" v-on:click="toggleActive(1)" href="http://www.baidu.com" >
+              <img class="car_img" width="100%" src="./images/car.jpeg" />
+              <div class="detail">
+                <h4 class="title">Standart</h4>
+                <p>this is text</p>
+                <div class="price_line">
+                  <span class="a_price">$4.89</span>
+                  <span class="s_price">$2.12</span>
+                </div>
+              </div>
+            </div>
+      <!-- 车子 end -->
+
+          </div>
+
+
+
+          <div class="swiper-slide">
+            <div class="car_item" :class="{'active':active == 2}" v-on:click="toggleActive(2)">
+              <img class="car_img" width="100%" src="./images/car.jpeg" />
+              <div class="detail">
+                <h4 class="title">Standart</h4>
+                <p>this is text</p>
+                <div class="price_line">
+                  <span class="a_price">$4.89</span>
+                  <span class="s_price">$2.12</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="car_item">
+              <img class="car_img" width="100%" src="./images/car.jpeg" />
+              <div class="detail">
+                <h4 class="title">Standart</h4>
+                <p>this is text</p>
+                <div class="price_line">
+                  <span class="a_price">$4.89</span>
+                  <span class="s_price">$2.12</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="car_item">
+              <img class="car_img" width="100%" src="./images/car.jpeg" />
+              <div class="detail">
+                <h4 class="title">Standart</h4>
+                <p>this is text</p>
+                <div class="price_line">
+                  <span class="a_price">$4.89</span>
+                  <span class="s_price">$2.12</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="car_item">
+              <img class="car_img" width="100%" src="./images/car.jpeg" />
+              <div class="detail">
+                <h4 class="title">Standart</h4>
+                <p>this is text</p>
+                <div class="price_line">
+                  <span class="a_price">$4.89</span>
+                  <span class="s_price">$2.12</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="car_item">
+              <img class="car_img" width="100%" src="./images/car.jpeg" />
+              <div class="detail">
+                <h4 class="title">Standart</h4>
+                <p>this is text</p>
+                <div class="price_line">
+                  <span class="a_price">$4.89</span>
+                  <span class="s_price">$2.12</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup_box" :class="popup ? 'show' : 'hide'" @click="popup = false; active = null;"> 
+      <div class="popup_body" @click.stop>
+        <h1>pop up conent H1</h1>
+        <h2>pop up conent H2</h2>
+        <h3>pop up conent H1</h3>
+        <h4>pop up conent H1</h4>
+      </div>
+    </div>
+  </div>
+  <script>
+   
+    
+   new Vue({
+     el:"#app",
+     data() {
+       return {
+         active: null,
+         popup:false,
+         btnClick: false
+       }
+     },
+     methods: {
+      toggleActive(index){
+        this.active = index
+        this.popup = true
+      }
+     },
+     mounted() {
+      var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 'auto',
+        spaceBetween: 30
+      });
+     }
+   })
+  </script>
+</body>
+</html>
