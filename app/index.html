@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>公司介绍</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    html {
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    .tabs {
+      display: flex;
+      border-bottom: 1px solid #ddd;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .tabs .tab {
+      flex: 0.25;
+      list-style: none;
+      padding: 10px 0;
+      text-align: center;
+      font-size: 18px;
+      color: #aaa;
+      cursor: pointer;
+    }
+
+    .tabs .tab.active {
+      color: #3172dc;
+      font-weight: bold;
+      position: relative;
+    }
+
+    .tabs .tab.active::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 4px;
+      background-color: #3172dc;
+      width: 30%;
+      border-radius: 4px;
+    }
+
+    .tabs-content {
+      padding: 30px 18px;
+    }
+
+    .tabs-content .title {
+      font-size: 20px;
+      font-family: Source Han Sans CN;
+      font-weight: bold;
+      color: #333333;
+      line-height: 30px;
+    }
+
+    .tabs-content .time {
+      margin: 20px 0 25px;
+      font-size: 12px;
+      font-family: Source Han Sans CN;
+      font-weight: 300;
+      color: #a5b0be;
+      line-height: 24px;
+    }
+
+    .tabs-content .context {
+      font-size: 17px;
+      font-family: Source Han Sans CN;
+      font-weight: 400;
+      color: #333333;
+      line-height: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header" id="header">
+      <ul class="tabs">
+        <li class="tab active" data-tabid="1">公司简介</li>
+        <li class="tab" data-tabid="2">资讯详情</li>
+        <li class="tab" data-tabid="3">投资理念</li>
+        <li class="tab" data-tabid="4">公司愿景</li>
+      </ul>
+    </div>
+    <div class="tabs-content">
+      <div class="tab-content" id="content">
+        <article>
+          <h1></h1>
+          <p></p>
+          <section></section>
+        </article>
+      </div>
+    </div>
+  </div>
+  <script>
+    var tabid = 1;
+    var data = {}
+    var detail_id = getQueryVariable('detail_id')
+    var about = getQueryVariable('about')
+    if(detail_id){
+      document.getElementById("header").innerHTML = ''
+      getDetailInfo()
+    }else if (about){
+      document.getElementById("header").innerHTML = ''
+      getAbout()
+    }else{
+      getData()
+    }
+    
+    function getData(){
+      data = {
+      1: {
+        title: "久阳润泉公司介绍",
+        time: "2020-10-21",
+        context: ` 北京久阳润泉资本管理中心（有限合伙）（以下简称“久阳润泉”），成立于2014年，注册资本1100万，实缴资本1000万。由具备18年投资经验和稳定投资业绩的董事长兼基金经理胡军程先生创建，是一家专注私募证券投资的私募基金公司，于同年六月取得私募基金管理人证书（编号：P1003006）。
+久阳润泉专注私募证券投资，十年如一日坚守在证券投资市场，秉持“正心利他，成人达己”的理念，一直将“持有人利益重于泰山”这句话内化于心，外化于行。公司构建了一个互利共赢的利益机制，将持有人、公司、员工的利益绑定，合为一体。主要体现为：科学的薪酬激励机制；合理的股权激励机制；基金经理、员工跟投机制；我们坚持价值投资，并将以专业高效、独立审慎、勤勉尽责的原则，为投资者提供最佳的投资管理服务。
+久阳润泉拥有一支专业的投研团队，核心成员均有着资深的投资经历，历经数轮牛熊洗礼，对证券市场有着深刻的理解，其中两名基金经理投资年限超过18年，两名超过8年，核心团队均来自国内一线高等院校。私募同行业绩连续三年TOP10；公司管理的基金产品2015年荣获全国私募基金业绩第二名； 2019年全国私募基金业绩第六名（证券时报）； 2020年全国优秀私募基金经理（介甫奖TOP10）、全国优秀基金管理人（介甫奖TOP10）、全国“社会责任基金管理人”奖（介甫奖TOP3）。
+过去十多年间，中国私募基金行业在经济增长中兴盛，在守正出新中壮大，在规范监管中成长，波澜跌宕的发展历程带来了教训、亦积累了经验。进入须臾万变的新时代，私募基金行业也迎来了新的发展阶断。初心如磐，历久弥坚，久阳润泉感恩投资者的信任，我们将一如既往做好投资管理，不负信赖，不负所托。 `,
+      },
+      2: {
+        title: "12323",
+        time: "2020-10-21",
+        context: "12323",
+      },
+      3: {
+        title: "12323",
+        time: "2020-10-21",
+        context: "12323",
+      },
+      4: {
+        title: "私募俱乐部会员齐聚一堂，交流娱乐两相忙",
+        time: "2020-10-21",
+        context: `北京久阳润泉资本管理中心（有限合伙）（以下简称“久阳润泉”），成立于2014年，注册资本1100万，实缴资本1000万。由具备18年投资经验和稳定投资业绩的董事长兼基金经理胡军程先生创建，是一家专注私募证券投资的私募基金公司，于同年六月取得私募基金管理人证书（编号：P1003006）。
+久阳润泉专注私募证券投资，十年如一日坚守在证券投资市场，秉持“正心利他，成人达己”的理念，一直将“持有人利益重于泰山”这句话内化于心，外化于行。公司构建了一个互利共赢的利益机制，将持有人、公司、员工的利益绑定，合为一体。主要体现为：科学的薪酬激励机制；合理的股权激励机制；基金经理、员工跟投机制；我们坚持价值投资，并将以专业高效、独立审慎、勤勉尽责的原则，为投资者提供最佳的投资管理服务。
+久阳润泉拥有一支专业的投研团队，核心成员均有着资深的投资经历，历经数轮牛熊洗礼，对证券市场有着深刻的理解，其中两名基金经理投资年限超过18年，两名超过8年，核心团队均来自国内一线高等院校。私募同行业绩连续三年TOP10；公司管理的基金产品2015年荣获全国私募基金业绩第二名； 2019年全国私募基金业绩第六名（证券时报）； 2020年全国优秀私募基金经理（介甫奖TOP10）、全国优秀基金管理人（介甫奖TOP10）、全国“社会责任基金管理人”奖（介甫奖TOP3）。
+过去十多年间，中国私募基金行业在经济增长中兴盛，在守正出新中壮大，在规范监管中成长，波澜跌宕的发展历程带来了教训、亦积累了经验。进入须臾万变的新时代，私募基金行业也迎来了新的发展阶断。初心如磐，历久弥坚，久阳润泉感恩投资者的信任，我们将一如既往做好投资管理，不负信赖，不负所托。`,
+      },
+    };
+      showInfo(tabid);  
+    }
+
+    function getDetailInfo() {
+      data = {
+        1: {
+          title: "久阳润泉公司介绍",
+          time: "2020-10-21",
+          context: ` 北京久阳润泉资本管理中心（有限合伙）（以下简称“久阳润泉”），成立于2014年，注册资本1100万，实缴资本1000万。由具备18年投资经验和稳定投资业绩的董事长兼基金经理胡军程先生创建，是一家专注私募证券投资的私募基金公司，于同年六月取得私募基金管理人证书（编号：P1003006）。
+  久阳润泉专注私募证券投资，十年如一日坚守在证券投资市场，秉持“正心利他，成人达己”的理念，一直将“持有人利益重于泰山”这句话内化于心，外化于行。公司构建了一个互利共赢的利益机制，将持有人、公司、员工的利益绑定，合为一体。主要体现为：科学的薪酬激励机制；合理的股权激励机制；基金经理、员工跟投机制；我们坚持价值投资，并将以专业高效、独立审慎、勤勉尽责的原则，为投资者提供最佳的投资管理服务。
+  久阳润泉拥有一支专业的投研团队，核心成员均有着资深的投资经历，历经数轮牛熊洗礼，对证券市场有着深刻的理解，其中两名基金经理投资年限超过18年，两名超过8年，核心团队均来自国内一线高等院校。私募同行业绩连续三年TOP10；公司管理的基金产品2015年荣获全国私募基金业绩第二名； 2019年全国私募基金业绩第六名（证券时报）； 2020年全国优秀私募基金经理（介甫奖TOP10）、全国优秀基金管理人（介甫奖TOP10）、全国“社会责任基金管理人”奖（介甫奖TOP3）。
+  过去十多年间，中国私募基金行业在经济增长中兴盛，在守正出新中壮大，在规范监管中成长，波澜跌宕的发展历程带来了教训、亦积累了经验。进入须臾万变的新时代，私募基金行业也迎来了新的发展阶断。初心如磐，历久弥坚，久阳润泉感恩投资者的信任，我们将一如既往做好投资管理，不负信赖，不负所托。 `,
+        }
+      }
+      showInfo(1); 
+
+    }
+
+    function getAbout(){
+      data = {
+        1: {
+          title: "久阳润泉公司介绍",
+          time: "2020-10-21",
+          context: ` 北京久阳润泉资本管理中心（有限合伙）（以下简称“久阳润泉”），成立于2014年，注册资本1100万，实缴资本1000万。由具备18年投资经验和稳定投资业绩的董事长兼基金经理胡军程先生创建，是一家专注私募证券投资的私募基金公司，于同年六月取得私募基金管理人证书（编号：P1003006）。
+  久阳润泉专注私募证券投资，十年如一日坚守在证券投资市场，秉持“正心利他，成人达己”的理念，一直将“持有人利益重于泰山”这句话内化于心，外化于行。公司构建了一个互利共赢的利益机制，将持有人、公司、员工的利益绑定，合为一体。主要体现为：科学的薪酬激励机制；合理的股权激励机制；基金经理、员工跟投机制；我们坚持价值投资，并将以专业高效、独立审慎、勤勉尽责的原则，为投资者提供最佳的投资管理服务。
+  久阳润泉拥有一支专业的投研团队，核心成员均有着资深的投资经历，历经数轮牛熊洗礼，对证券市场有着深刻的理解，其中两名基金经理投资年限超过18年，两名超过8年，核心团队均来自国内一线高等院校。私募同行业绩连续三年TOP10；公司管理的基金产品2015年荣获全国私募基金业绩第二名； 2019年全国私募基金业绩第六名（证券时报）； 2020年全国优秀私募基金经理（介甫奖TOP10）、全国优秀基金管理人（介甫奖TOP10）、全国“社会责任基金管理人”奖（介甫奖TOP3）。
+  过去十多年间，中国私募基金行业在经济增长中兴盛，在守正出新中壮大，在规范监管中成长，波澜跌宕的发展历程带来了教训、亦积累了经验。进入须臾万变的新时代，私募基金行业也迎来了新的发展阶断。初心如磐，历久弥坚，久阳润泉感恩投资者的信任，我们将一如既往做好投资管理，不负信赖，不负所托。 `,
+        }
+      }
+      showInfo(1); 
+    }
+    function contextTemp(data) {
+      return `
+      <article>
+          <h1 class="title">${data.title}</h1>
+          <p class="time">${data.time}</p>
+          <section class="context">${data.context}</section>
+        </article>
+      `;
+    }
+
+    function showInfo(id) {
+      var html = contextTemp(data[id]);
+      document.getElementById("content").innerHTML = html;
+    }
+    
+    function getQueryVariable(variable) {
+      var query = window.location.search.substring(1);
+      var vars = query.split("&");
+      for (var i = 0; i < vars.length; i++) {
+          var pair = vars[i].split("=");
+          if (pair[0] === variable) { return pair[1]; }
+      }
+      return '';
+    }
+
+    document.getElementById("header").addEventListener("click", function (e) {
+      console.log(e);
+      if (e.target.classList.contains("tab")) {
+        e.target.parentElement
+          .querySelectorAll(".active")
+          .forEach(function (dom) {
+            dom.classList.remove("active");
+          });
+        e.target.classList.add("active");
+        showInfo(e.target.dataset.tabid);
+      }
+    });
+  </script>
+</body>
+
+</html>
