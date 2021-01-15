@@ -235,7 +235,7 @@
     function http(options) {
       var url = options.url;
       var method =options.method
-      var  baseUrl = env == 'test' ? 'http://lili.today/api':'http://39.105.102.138'
+      var  baseUrl = env == 'test' ? 'http://lili.today':'http://39.105.102.138'
       var XHR = new XMLHttpRequest();
       XHR.open(method, baseUrl + url, true)
       XHR.responseType = 'json'
