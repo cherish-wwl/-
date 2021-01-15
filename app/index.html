@@ -116,6 +116,8 @@
     </div>
   </div>
   <script>
+
+    var env = 'test'
     var tabid = 1;
     var data = {}
     var detail_id = getQueryVariable('id')
@@ -233,7 +235,7 @@
     function http(options) {
       var url = options.url;
       var method =options.method
-      var  baseUrl ='http://39.105.102.138'
+      var  baseUrl = env == 'test' ? 'http://lili.today/app_api':'http://39.105.102.138'
       var XHR = new XMLHttpRequest();
       XHR.open(method, baseUrl + url, true)
       XHR.responseType = 'json'
