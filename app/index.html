@@ -96,6 +96,7 @@
       font-weight: 400;
       color: #333333;
       line-height: 30px;
+      word-break: break-word;
     }
 
     img, table{
@@ -117,18 +118,15 @@
   </div>
   <script>
 
-    var env = 'test'
+    var env =   '';
+    // 'test'
     var tabid = 1;
     var data = {}
-    var detail_id = getQueryVariable('id')
-    var about = getQueryVariable('about')
-
-    http({url:'/api/v1/office/category',method:'get',success: function(res){
-      var html = headerTabTemp(res.data.list)
-      document.getElementById('tabs').innerHTML = html
-      init()
-    }})
-
+    var detail_id = getQueryVariable('d_id')
+    var type = getQueryVariable('type')
+    var c_id = getQueryVariable('c_id')
+   
+    init()
     function headerTabTemp(list){
       var str = ''
       for (var index = 0; index < list.length; index++) {
@@ -140,60 +138,58 @@
       }
       return str 
     }
-
     function init() {
+      document.getElementById("header").innerHTML = ''
       if (detail_id) {
-        document.getElementById("header").innerHTML = ''
         getDetailInfo()
-      } else if (about) {
-        document.getElementById("header").innerHTML = ''
+      } else if (type === 'about') {
         getAbout()
-      } else {
-        getData(tabid)
+      } else if(c_id){
+        getProtocalInfo()
+      }else{
+        getCategory()
       }
     }
-
+    function getCategory(){
+      http({url:'/api/v1/office/category',method:'get',success: function(res){
+      var html = headerTabTemp(res.data.list)
+      document.getElementById('tabs').innerHTML = html
+      getData(tabid)
+    }})
+    }
     function getData(id) {
       http({url:'/api/v1/office/contentList?category_id='+id,method:'get',success: function(res){
-        var data = {
-                "id": 1,
-                "category_id": 2,
-                "title": "核心团队介绍",
-                "content": "<p>121212sdf<img src=\"http://jiuyang.tony.com/upload/image/202012/6ycFDLcTo3SnwdJhWE7lmVBmImzlG16ZRSF0f8EY.jpg\" style=\"float: right;\"/></p><p><br/></p><p>rwe we<br/></p><p><br/></p><p>sdfsdsfsfsdffffffffffffffffffffffffffffffffffffffsdfsdfdsfsd<br/></p>",
-                "created_at": "2020-12-21 20:42:12",
-                "updated_at": "2020-12-21 22:01:49"
-            }
+        var data = res.data.list[0]
         showInfo(data);
       }})
         
     }
 
     function getDetailInfo() {
-      data = {
-          "title": "核心团队介绍",
-          "updated_at": "2020-12-21 22:01:49",
-          content: ` 北京久阳润泉资本管理中心（有限合伙）（以下简称“久阳润泉”），成立于2014年，注册资本1100万，实缴资本1000万。由具备18年投资经验和稳定投资业绩的董事长兼基金经理胡军程先生创建，是一家专注私募证券投资的私募基金公司，于同年六月取得私募基金管理人证书（编号：P1003006）。
-  久阳润泉专注私募证券投资，十年如一日坚守在证券投资市场，秉持“正心利他，成人达己”的理念，一直将“持有人利益重于泰山”这句话内化于心，外化于行。公司构建了一个互利共赢的利益机制，将持有人、公司、员工的利益绑定，合为一体。主要体现为：科学的薪酬激励机制；合理的股权激励机制；基金经理、员工跟投机制；我们坚持价值投资，并将以专业高效、独立审慎、勤勉尽责的原则，为投资者提供最佳的投资管理服务。
-  久阳润泉拥有一支专业的投研团队，核心成员均有着资深的投资经历，历经数轮牛熊洗礼，对证券市场有着深刻的理解，其中两名基金经理投资年限超过18年，两名超过8年，核心团队均来自国内一线高等院校。私募同行业绩连续三年TOP10；公司管理的基金产品2015年荣获全国私募基金业绩第二名； 2019年全国私募基金业绩第六名（证券时报）； 2020年全国优秀私募基金经理（介甫奖TOP10）、全国优秀基金管理人（介甫奖TOP10）、全国“社会责任基金管理人”奖（介甫奖TOP3）。
-  过去十多年间，中国私募基金行业在经济增长中兴盛，在守正出新中壮大，在规范监管中成长，波澜跌宕的发展历程带来了教训、亦积累了经验。进入须臾万变的新时代，私募基金行业也迎来了新的发展阶断。初心如磐，历久弥坚，久阳润泉感恩投资者的信任，我们将一如既往做好投资管理，不负信赖，不负所托。 `,
-      }
-      showInfo(data);
+      http({url:'/api/v1/information/detail?information_id='+ detail_id,method:'get',success: function(res){
+        var data = res.data.information
+        showInfo(data);
+      }})
     }
-
+    function getProtocalInfo() {
+      http({url:'/api/v1/protocol/content?c_id=' + c_id,method:'get',success: function(res){
+        var data = res.data.protocol
+        showInfo(data);
+      }})
+    }
     function getAbout() {
-      data = {
-          content: ` 北京久阳润泉资本管理中心（有限合伙）（以下简称“久阳润泉”），成立于2014年，注册资本1100万，实缴资本1000万。由具备18年投资经验和稳定投资业绩的董事长兼基金经理胡军程先生创建，是一家专注私募证券投资的私募基金公司，于同年六月取得私募基金管理人证书（编号：P1003006）。
-  久阳润泉专注私募证券投资，十年如一日坚守在证券投资市场，秉持“正心利他，成人达己”的理念，一直将“持有人利益重于泰山”这句话内化于心，外化于行。公司构建了一个互利共赢的利益机制，将持有人、公司、员工的利益绑定，合为一体。主要体现为：科学的薪酬激励机制；合理的股权激励机制；基金经理、员工跟投机制；我们坚持价值投资，并将以专业高效、独立审慎、勤勉尽责的原则，为投资者提供最佳的投资管理服务。
-  久阳润泉拥有一支专业的投研团队，核心成员均有着资深的投资经历，历经数轮牛熊洗礼，对证券市场有着深刻的理解，其中两名基金经理投资年限超过18年，两名超过8年，核心团队均来自国内一线高等院校。私募同行业绩连续三年TOP10；公司管理的基金产品2015年荣获全国私募基金业绩第二名； 2019年全国私募基金业绩第六名（证券时报）； 2020年全国优秀私募基金经理（介甫奖TOP10）、全国优秀基金管理人（介甫奖TOP10）、全国“社会责任基金管理人”奖（介甫奖TOP3）。
-  过去十多年间，中国私募基金行业在经济增长中兴盛，在守正出新中壮大，在规范监管中成长，波澜跌宕的发展历程带来了教训、亦积累了经验。进入须臾万变的新时代，私募基金行业也迎来了新的发展阶断。初心如磐，历久弥坚，久阳润泉感恩投资者的信任，我们将一如既往做好投资管理，不负信赖，不负所托。 `,
-      }
-      showInfo(data);
+      var url = ''
+      if(!url) return
+      http({url:url,method:'get',success: function(res){
+        var data = res.data.protocol
+        showInfo(data);
+      }})
     }
     function contextTemp(data) {
       return '<article>' +
-                '<h1 class="title">'+data.title+'</h1>' +
-                '<p class="time">'+data.updated_at+'</p>' +
-                '<section class="context">'+data.content+'</section>' +
+                '<h1 class="title">'+(data.title || '')+'</h1>' +
+                '<p class="time">'+(data.updated_at || '')+'</p>' +
+                '<section class="context">'+(data.content || '')+'</section>' +
               '</article>';
     }
 
@@ -204,8 +200,11 @@
     }
 
     function showInfo(data) {
-      var html = about ? aboutContextTemp(data) : contextTemp(data);
-      document.getElementById("content").innerHTML = html;
+      document.getElementById("content").innerHTML = ''
+      if(data){
+        var html = contextTemp(data);
+        document.getElementById("content").innerHTML = html;
+      }
     }
 
     function getQueryVariable(variable) {
