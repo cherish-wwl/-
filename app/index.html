@@ -117,7 +117,7 @@
     </div>
   </div>
   <script>
-
+    (function (){
     var env =  'test';
     // 'test'
     var tabid = 1;
@@ -139,7 +139,8 @@
       return str 
     }
     function init() {
-      document.getElementById("header").innerHTML = ''
+      document.getElementById("tabs").innerHTML = ''
+      document.getElementById("content").innerHTML = ''
       if (detail_id) {
         getDetailInfo()
       } else if (type === 'about') {
@@ -247,6 +248,7 @@
       }
       XHR.send(null)
     }
+  })()
   </script>
 </body>
 
