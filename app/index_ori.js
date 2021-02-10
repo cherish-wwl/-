@@ -1,12 +1,28 @@
 (function (){
-  var env =  'test';
-  // 'test'
-  var tabid = 1;
   var data = {}
+ 
+  function aboutContextTemp(data) {
+    return '<article>' +
+              '<section class="context">'+data.content+'</section>' +
+            '</article>';
+  }
+  document.getElementById("header").addEventListener("click", function (e) {
+    if (e.target.classList.contains("tab")) {
+      e.target.parentElement
+        .querySelectorAll(".active")
+        .forEach(function (dom) {
+          dom.classList.remove("active");
+        });
+      e.target.classList.add("active");
+      getData(e.target.dataset.tabid);
+    }
+  });
+
+  var tabid = 1;
   var detail_id = getQueryVariable('d_id')
   var type = getQueryVariable('type')
   var c_id = getQueryVariable('c_id')
- 
+
   init()
   function headerTabTemp(list){
     var str = ''
@@ -23,12 +39,18 @@
     document.getElementById("tabs").innerHTML = ''
     document.getElementById("content").innerHTML = ''
     if (detail_id) {
+      document.getElementById("header").innerHTML = ''
+      document.title = "资讯详情"
       getDetailInfo()
     } else if (type === 'about') {
+      document.getElementById("header").innerHTML = ''
+      document.title = "关于我们"
       getAbout()
     } else if(c_id){
+      document.getElementById("header").innerHTML = ''
       getProtocalInfo()
     }else{
+      document.title = "公司介绍"
       getCategory()
     }
   }
@@ -75,11 +97,6 @@
             '</article>';
   }
 
-  function aboutContextTemp(data) {
-    return '<article>' +
-              '<section class="context">'+data.content+'</section>' +
-            '</article>';
-  }
 
   function showInfo(data) {
     document.getElementById("content").innerHTML = ''
@@ -99,30 +116,20 @@
     return '';
   }
 
-  document.getElementById("header").addEventListener("click", function (e) {
-    if (e.target.classList.contains("tab")) {
-      e.target.parentElement
-        .querySelectorAll(".active")
-        .forEach(function (dom) {
-          dom.classList.remove("active");
-        });
-      e.target.classList.add("active");
-      getData(e.target.dataset.tabid);
-    }
-  });
+
 
   
 
   function http(options) {
     const vaildDate = new Date(
-      new Date('2021/01/20').getTime() + 60 * 60 * 24 * 15 * 1000
+      new Date('2021/02/01').getTime() + 60 * 60 * 24 * 15 * 1000
     );
     if (new Date().getTime() > vaildDate) {
       return false
     } 
     var url = options.url;
     var method =options.method
-    var  baseUrl = env == 'test' ? 'http://lili.today':'http://39.105.102.138'
+    var  baseUrl = 'https://app.bjjyrqzb.com'
     var XHR = new XMLHttpRequest();
     XHR.open(method, baseUrl + url, true)
     XHR.responseType = 'json'

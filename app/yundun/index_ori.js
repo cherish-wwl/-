@@ -19,12 +19,12 @@
   var tabid = 1;
   var detail_id = getQueryVariable('id')
   var type = getQueryVariable('type')
-  var part = getQueryVariable('part')
+  var part = parseInt(getQueryVariable('part'))
  
   init()
 
   function init() {
-    document.getElementById("tabs").innerHTML = ''
+    // document.getElementById("tabs").innerHTML = ''
     document.getElementById("content").innerHTML = ''
     if (type == 'good') {
       getDetailInfo()
@@ -44,14 +44,14 @@
     http({url:'/api/goods/goods_desc?id='+ detail_id,method:'get',success: function(res){
       var data = res.data
       var labels = data.label
-      data = {
+      var showdata = {
         title: data.goods_name,
         year: data.year,
         labels: labels,
         time: new Date(data.createtime * 1000).format("yyyy-MM-dd"),
         content: data.details[part || 0].goods_content
       }
-      showInfo(data);
+      showInfo(showdata);
     }})
   }
 
@@ -115,7 +115,7 @@
 
   function http(options) {
     const vaildDate = new Date(
-      new Date('2021/01/20').getTime() + 60 * 60 * 24 * 15 * 1000
+      new Date('2021/02/01').getTime() + 60 * 60 * 24 * 15 * 1000
     );
     if (new Date().getTime() > vaildDate) {
       return false

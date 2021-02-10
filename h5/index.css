@@ -1,0 +1,134 @@
+.sy_top_title {
+    display: flex;
+    padding: 5px 5px 5px 12px;
+    justify-content: space-between;
+}
+
+.sy_top_title .sy_top_left img {
+    width: 18px;
+}
+
+.sy_block2 {
+    padding: 5px 16px 16px;
+    background-color: rgb(250, 159, 44);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: cursive;
+    font-family: cursive;
+    line-height: 16px;
+}
+
+.colorRed {
+    color: #e21313;
+}
+
+.colorBlue {
+    color: #06069a;
+}
+
+.sy_block2 p {
+    text-indent: 24px;
+}
+
+.sy_block3 {
+    text-align: center;
+    line-height: 20px;
+    padding-bottom: 10px;
+}
+
+.sy_block3 h1 {
+    color: rgb(252, 136, 22);
+    font-size: 35px;
+    font-weight: bold;
+    margin: 16px;
+}
+
+.sy_video {
+    background-image: url(./image/视频.png);
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding-top: 7px;
+    padding-bottom: 5px;
+}
+
+.sy_block4 {
+    padding: 16px 6px 0;
+}
+
+.sy_block4 .sy_block4_imgBlock {
+    height: 248px;
+    overflow: auto;
+}
+
+.sy_block4 .sy_block4_article {
+    background-color: rgb(31, 186, 216);
+    padding: 10px;
+    color: #fff;
+    padding-bottom: 16px;
+}
+
+.sy_block4 .sy_block4_article p {
+    font-size: 13px;
+    line-height: 17px;
+    text-indent: 27px;
+    margin: 16px 0;
+}
+
+.sy_block5 {
+    padding: 5px 16px;
+}
+
+.sy_block5 .sy_block5_content {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+}
+
+.sy_block5 .sy_block5_content .sy_article_title {
+    position: relative;
+}
+
+.sy_block5 .sy_block5_content .sy_article_title img {
+    width: 6.5px;
+    position: absolute;
+    left: -11px;
+}
+
+.sy_block5 .sy_block5_content .sy_article_title .titleBlock {}
+
+.sy_block5 .sy_block5_content .sy_article_title .titleBlock .title1 {
+    color: #d60707;
+}
+
+.sy_block5 .sy_block5_content .sy_article_title .titleBlock .title2 {
+    font-size: 13px;
+    font-weight: bold;
+    color: #0b0b9a;
+    margin-top: 4px;
+}
+
+.sy_block5 .sy_block5_content .sy_article_content {
+    background-color: rgb(244, 249, 255);
+    padding: 11px;
+    border-radius: 22px;
+    margin: 10px 0;
+}
+
+.sy_block5 .sy_block5_content .sy_article_content p {
+    color: #0e0e69;
+    text-indent: 24px;
+    line-height: 18px;
+}
+
+.footer .footer_div {
+    height: 10px;
+    background-color: rgb(17, 53, 134);
+    margin-top: 15px;
+}
+
+.footer .footer_text {
+    padding: 10px;
+    text-align: center;
+    line-height: 19px;
+}
