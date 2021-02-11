@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <title></title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      touch-action: pan-y;
+    }
+
+    html {
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+    }
+
+    .tabs {
+      display: flex;
+      /* border-bottom: 1px solid #ddd; */
+      align-items: center;
+      /* justify-content: space-between; */
+      padding: 0 18px;
+      overflow-x: auto;
+    }
+
+    .tabs .tab {
+      /* flex: 0.25; */
+      list-style: none;
+      padding: 10px 0;
+      text-align: center;
+      font-size: 18px;
+      color: #aaa;
+      cursor: pointer;
+      white-space: nowrap;
+      margin-right: 20px;
+    }
+
+    .tabs .tab:last-child {
+      text-align: right;
+    }
+
+    .tabs .tab:first-child {
+      text-align: left;
+    }
+
+    .tabs .tab.active {
+      color: #3172dc;
+      font-weight: bold;
+      position: relative;
+    }
+
+    .tabs .tab.active::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 4px;
+      background-color: #3172dc;
+      width: 30%;
+      border-radius: 4px;
+    }
+
+    .tabs-content {
+      padding: 30px 20px 25px 20px;
+    }
+
+    .tabs-content .title {
+      font-size: 20px;
+      font-family: Source Han Sans CN;
+      font-weight: bold;
+      color: #333333;
+      line-height: 30px;
+    }
+
+    .tabs-content .time {
+      margin: 10px 0 12px;
+      font-size: 12px;
+      font-family: Source Han Sans CN;
+      font-weight: 300;
+      color: #a5b0be;
+      line-height: 24px;
+      
+    }
+
+    .tabs-content .context {
+      font-size: 17px;
+      font-family: Source Han Sans CN;
+      font-weight: 400;
+      color: #333333;
+      line-height: 30px;
+      word-break: break-word;
+      text-align: justify;
+    }
+
+    img, table{
+      max-width: 100%;
+    }
+    .labels{
+      margin-top: 10px;
+    }
+    .labels .item {
+      font-size: 12px;
+      font-family: Source Han Sans CN;
+      font-weight: 300;
+      color: #f3a700;
+      line-height: 24px;
+      background-color: #f9edd4;
+      padding: 2px 10px;
+      margin-right: 10px;
+      border-radius: 9px;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="tabs-content">
+      <div class="tab-content">
+        <article> 
+          <h1 class="title">河南销售保持战略定力坚决打赢效益实现保卫战</h1>
+          <p class="time">2021-02-07 15:25</p>
+          <section class="context">
+         
+
+              <p>　　面对疫情和油价暴跌双重压力，成品油销售企业必须主动作为，充分发挥国企党建优势，树立商人思维、强化算账意识，以革命性措施深化提质增效，以加油站为创效单元，实施加油站及便利店单站、单店核算，坚决不做亏本买卖。</p>
+ 
+ <p>　　面对低油价“寒冬”，坚持党建引领、深化提质增效是成品油销售企业生存发展的有效途径。这是一场事关发展的大考，也是一场关乎生死的决战。</p>
+ 
+ <p>　　坚持党建引领，是夺取疫情防控阻击战和效益实现保卫战的坚强保证。成品油销售企业必须始终把提高效益、增强企业竞争力，实现企业保值增值作为党组织工作的出发点、落脚点，让党建工作成为企业发展的红色引擎、夺取“双胜利”的坚强后盾。河南销售先后召开21次专题会议贯彻落实疫情防控和稳定生产经营各项工作部署，组织引导各级党组织一手抓疫情防控，一手抓生产经营，推广“网格化、责任制、全覆盖”模式，开展“四见五进”活动(见政府、见伙伴、见同行、见客户，进社区、进单位、进厂矿、进车场、进展会)开发客户，让基层组织有抓手、党员干部工作有重点，有效发挥基层党组织战斗堡垒和党员先锋模范作用，以党建工作高质量推动生产经营实现新突破、新提升，从而为扎实做好“六稳”工作、落实“六保”任务做出应有贡献。河南销售开展“中油迎新节，钜惠油粉月”和“你为我守护，我为你加油”营销活动，累计发行天使卡7.3万张，定向投放电子消费券1800万元，销售春耕用油7000吨，为地方政府及企业夺取“双胜利”做出应有贡献。</p>
+ 
+ <p>　　深化效益理念，是企业低成本战略、高质量发展的必然要求。油价波动是常态，成品油销售企业要保持战略定力，树立商人思维，增强成本效益意识，不过度追求规模和速度，坚定效益理念不动摇，坚定低成本发展不动摇。河南销售严格落实工效挂钩办法，突出效益效率和劳动生产率提升，为中层干部配发《商品流通会计》，要求管理者必须看懂资产负债表、利润表和现金流量表，从三张表中发现问题、改进工作，促进管理提升，实现管理增效，2019年化解巨亏；今年4月份起，我们强化结果导向，按照利润指标和人均纯枪量指标实施工效挂钩，引导各单位从要量向要效转变，4月份利润同比增幅明显。作为销售企业的主阵地，我们始终坚持“加油站是创效单元，不是亏损单元”的理念，推行单站、单店核算，强化站经理、便利店主管的算账意识、经营理念，倒逼管理、倒逼营销。召开亏损站治理和证照缺失站治理专题会议，推出双低站综合治理3年方案，实施“双低站”提质工程。目前，加油站运营率提升16%，亏损站占比减少三成。</p>
+ 
+ <p>　　落实“八字方针”，是应对需求不振、低价竞争的有效途径。面对新技术、新模式、新需求的崛起，以及互联网企业不断试探商业边界，成品油销售企业要想在多重竞争压力下突出重围，必须以“保价、提量、增效、降费”为方针，树立“新零售”发展理念，坚定“三不政策”(坚决不打价格战、坚决不搞普惠制，坚决不做亏本买卖)，坚持“三个高于”(高于同行的消费环境，高于同行的站容站貌，高于同行的现场服务)，深化油卡非润一体营销、线上线下互动，为客户提供一站式服务。河南销售推动营销政策由全员普惠向“一户一策”转变，由会员日降价向提升客户权益转变，由挂牌直降向线上组合营销转变，由“拼价格”向“比服务”转变；直批营销精细到“元”，零售营销细致到“分”；持续提高现场服务效率和服务能力，实施加油站立体化建设、智慧化升级，打造样板示范站、管理特色站，构建跨界融合、共创共享、共生共赢的区域智慧供应链生态圈；持续开展创新营销，通过线上销售、直播带货让好商品直达客户。目前，河南销售累计价格到位率同比提升明显，柴汽比有效降低，非油销售同比增长，为实施低成本战略推动高质量发展奠定了坚实基础。（<strong>刘星国</strong> 河南销售公司党委书记、总经理）</p>
+  
+ 
+ 
+ 
+             
+            降价最高限细抠采购中、考核平均降幅指导采购后”的全生命周期效益采购机制，实施“工厂到现场”一站式配送，实现物资、工程服务类合同平均降幅11.6%和物资零库存管理。倒算成本，找准自有机组发电成本与能源替代成本费用平衡点，定额各型钻机台月燃料消耗，实行差异化、精准化能源供给，实施226井次“油改电”、23井次“油改气”作业，替代柴油4.87万吨。
+          </section>
+        </article>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+
+

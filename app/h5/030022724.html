@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <title></title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      touch-action: pan-y;
+    }
+
+    html {
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+    }
+
+    .tabs {
+      display: flex;
+      /* border-bottom: 1px solid #ddd; */
+      align-items: center;
+      /* justify-content: space-between; */
+      padding: 0 18px;
+      overflow-x: auto;
+    }
+
+    .tabs .tab {
+      /* flex: 0.25; */
+      list-style: none;
+      padding: 10px 0;
+      text-align: center;
+      font-size: 18px;
+      color: #aaa;
+      cursor: pointer;
+      white-space: nowrap;
+      margin-right: 20px;
+    }
+
+    .tabs .tab:last-child {
+      text-align: right;
+    }
+
+    .tabs .tab:first-child {
+      text-align: left;
+    }
+
+    .tabs .tab.active {
+      color: #3172dc;
+      font-weight: bold;
+      position: relative;
+    }
+
+    .tabs .tab.active::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 4px;
+      background-color: #3172dc;
+      width: 30%;
+      border-radius: 4px;
+    }
+
+    .tabs-content {
+      padding: 30px 20px 25px 20px;
+    }
+
+    .tabs-content .title {
+      font-size: 20px;
+      font-family: Source Han Sans CN;
+      font-weight: bold;
+      color: #333333;
+      line-height: 30px;
+    }
+
+    .tabs-content .time {
+      margin: 10px 0 12px;
+      font-size: 12px;
+      font-family: Source Han Sans CN;
+      font-weight: 300;
+      color: #a5b0be;
+      line-height: 24px;
+      
+    }
+
+    .tabs-content .context {
+      font-size: 17px;
+      font-family: Source Han Sans CN;
+      font-weight: 400;
+      color: #333333;
+      line-height: 30px;
+      word-break: break-word;
+      text-align: justify;
+    }
+
+    img, table{
+      max-width: 100%;
+    }
+    .labels{
+      margin-top: 10px;
+    }
+    .labels .item {
+      font-size: 12px;
+      font-family: Source Han Sans CN;
+      font-weight: 300;
+      color: #f3a700;
+      line-height: 24px;
+      background-color: #f9edd4;
+      padding: 2px 10px;
+      margin-right: 10px;
+      border-radius: 9px;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="tabs-content">
+      <div class="tab-content">
+        <article> 
+          <h1 class="title">“三突出”助推油气“双超”
+            新疆油田两年原油产量累计净增173万吨</h1>
+          <p class="time">2021-01-22 09:23</p>
+          <section class="context">
+
+              <p style="text-align:left">　　<strong>中国石油网消息</strong>（记者宋鹏）刚刚过去的2020年，新疆油田公司迎难而上，以“三突出”助推主业高质量发展和效益开发，全年共生产原油1320万吨、天然气30亿立方米，分别超产15万吨和2亿立方米，原油生产同比净增73万吨，超产量和净增量居集团公司首位，实现了连续六年油气双超佳绩，连续两年原油产量净增累计173万吨，同时油气单位完全成本、油气操作成本控制同比实现双下降。</p>
+ 
+ <p style="text-align:left">　　去年，新疆油田紧紧围绕全年目标任务，统筹打好疫情防控阻击战和效益实现保卫战，扎实推进提质增效专项行动落地落实，超前谋划、精心组织，克服各种困难，实现了产量逆势上扬。</p>
+ 
+ <p style="text-align:left">　　突出精益生产，坚持精细开发、量效并重，原油日产纪录不断刷新。油田公司以业绩合同、考核指标、奖励政策“三个不变”，促进思想、人员、措施“三个到位”，克服多轮疫情不利影响、全力推进复工复产，高效组织开展百日原油上产会战、冬季井下作业会战，充分发扬“吨油必争、斤油必争、问题井不过夜”的会战精神，扎实抓好各项重点措施落实，2020年6月上旬原油日产量突破3.6万吨、提前20天完成会战目标任务，8月下旬原油日产水平达到3.8866万吨，创历史新高。</p>
+ 
+ <p style="text-align:left">　　突出效率效益，产能建设取得新进步。油田公司全面优化产能结构和方案部署，大力推广“大井丛、平台式、工厂化”和“批钻批压、批焖批开”建产模式，完善推广钻井提速模板、压裂组合工艺，强化现场各环节无缝衔接，玛湖地区、吉木萨尔页岩油钻井综合提速14.5%、压裂平均协同效率由2.9级/天提升至4.5级/天，玛湖地区全年新建产能、产油双双实现“两百万”突破。在完成全年302.6万吨产能建设的基础上，提前实施2021年44.2万吨产能，百万吨产能投资降至45.5亿元、同比下降13.9亿元。</p>
+ 
+ <p style="text-align:left">　　突出控投降本，提质增效取得新成效。油田公司聚焦“四精”要求，坚持“五保一压”，研读用好“三张表”，一体推进“成本管控年”活动和提质增效专项行动，深入开展“战严冬、转观念、勇担当、上台阶”主题教育活动，动员油田上下和承包商企业统一思想认识、主动攻坚克难，全年控投降本88亿元，未上市业务实现扭亏为盈，油气单位完全成本、油气操作成本控制分别同比下降2.47、1.67美元，实现了账面硬减亏、成本硬下降。</p>
+  
+ 
+ 
+ 
+             
+          </section>
+        </article>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+
+

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <title></title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      touch-action: pan-y;
+    }
+
+    html {
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+    }
+
+    .tabs {
+      display: flex;
+      /* border-bottom: 1px solid #ddd; */
+      align-items: center;
+      /* justify-content: space-between; */
+      padding: 0 18px;
+      overflow-x: auto;
+    }
+
+    .tabs .tab {
+      /* flex: 0.25; */
+      list-style: none;
+      padding: 10px 0;
+      text-align: center;
+      font-size: 18px;
+      color: #aaa;
+      cursor: pointer;
+      white-space: nowrap;
+      margin-right: 20px;
+    }
+
+    .tabs .tab:last-child {
+      text-align: right;
+    }
+
+    .tabs .tab:first-child {
+      text-align: left;
+    }
+
+    .tabs .tab.active {
+      color: #3172dc;
+      font-weight: bold;
+      position: relative;
+    }
+
+    .tabs .tab.active::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 4px;
+      background-color: #3172dc;
+      width: 30%;
+      border-radius: 4px;
+    }
+
+    .tabs-content {
+      padding: 30px 20px 25px 20px;
+    }
+
+    .tabs-content .title {
+      font-size: 20px;
+      font-family: Source Han Sans CN;
+      font-weight: bold;
+      color: #333333;
+      line-height: 30px;
+    }
+
+    .tabs-content .time {
+      margin: 10px 0 12px;
+      font-size: 12px;
+      font-family: Source Han Sans CN;
+      font-weight: 300;
+      color: #a5b0be;
+      line-height: 24px;
+      
+    }
+
+    .tabs-content .context {
+      font-size: 17px;
+      font-family: Source Han Sans CN;
+      font-weight: 400;
+      color: #333333;
+      line-height: 30px;
+      word-break: break-word;
+      text-align: justify;
+    }
+
+    img, table{
+      max-width: 100%;
+    }
+    .labels{
+      margin-top: 10px;
+    }
+    .labels .item {
+      font-size: 12px;
+      font-family: Source Han Sans CN;
+      font-weight: 300;
+      color: #f3a700;
+      line-height: 24px;
+      background-color: #f9edd4;
+      padding: 2px 10px;
+      margin-right: 10px;
+      border-radius: 9px;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="tabs-content">
+      <div class="tab-content">
+        <article> 
+          <h1 class="title">大庆油田突出问题导向 提升创效能力
+            以硬核举措全面打赢这场硬仗</h1>
+          <p class="time">2021-02-07 15:27</p>
+          <section class="context">
+
+              <p><strong><span style="font-family:楷体;">　　大庆油田干部员工深刻认识到“四个没有”：没有质量就没有生存根基、没有效益就没有百年梦想、没有发展就没有标杆矗立、没有贡献就没有旗帜高扬，把低油价遭遇战转化为提质增效攻坚战，以时不我待、舍我其谁的拼劲和状态，全力打好“六大战役”。</span></strong></p>
+ 
+ <p>　　受新冠肺炎疫情、国际油价暴跌等多因素叠加，大庆油田生产经营面临的严峻形势前所未有。推进提质增效专项行动在大庆油田落实落地，任务紧迫，形势逼人。必须以硬核举措全面打赢这场硬仗，这是立足长远抓当前、体现责任担当、实现振兴发展的关键战役。</p>
+ 
+ <p>　　从内部看，大庆油田经过60年高速高效开发，资源劣质化，开发成本刚性增长，盈利能力大幅下降，一些长期积累的机制体制性问题“油落石出”更加凸显。从外部看，要树立底线思维，此次低油价“冰河期”带来的困难和压力将比上一次油价“寒冬”更加“冷酷”。但是“危和机总是同生并存的，克服了危即是机”，低油价的双刃剑，将倒逼企业加快转型升级，迈上更高层次的高质量发展。跨过难关，逆势突围，就会化危为机。</p>
+ 
+ <p>　　增强忧患意识，坚决丢掉幻想，大庆油田干部员工深刻认识到“四个没有”：没有质量就没有生存根基、没有效益就没有百年梦想、没有发展就没有标杆矗立、没有贡献就没有旗帜高扬。</p>
+ 
+ <p>　　思想“破冰”才会有行动“突围”。摆脱惰性思维、路径依赖，大庆油田积极转变“四个观念”，树立“四个意识”：转变坐等油价回暖，依靠集团施策的被动等靠观念，树立“只要精神不滑坡，办法总比困难多”的忧患意识；转变“都学大庆经验，我又何必创新”的僵化自满观念，树立不进则退、慢进也退的进取意识；转变“国有企业家大业大、衣食无忧、吃穿不愁”的守旧安逸观念，树立市场至上、成本至上、效益至上的效益意识；转变“资源越来越少、油田越来越老”的悲观畏难观念，树立科技无限、创新无限、管理无限的创新意识。</p>
+ 
+ <p>　　这是一场硬仗，这是一场大考。把低油价遭遇战转化为提质增效攻坚战，大庆油田以时不我待、舍我其谁的拼劲和状态，全力打好“六大战役”：大打精准开发攻坚战，向油气产量要效益；大打降本节支攻坚战，向内部挖潜要效益；大打结构调整攻坚战，向深化改革要效益；大打瓶颈技术攻坚战，向科技创新要效益；大打市场拓展攻坚战，向开源增收要效益；大打安全环保攻坚战，向本质安全要效益。</p>
+ 
+ <p>　　大庆油田4月24日召开提质增效推进会，出台2020年提质增专项行动实施方案，全面落实集团公司专项行动方案部署，大力实施“净利润提升”“亏损企业治理”“两金压降”“财务运营创效”四大行动计划，落实“三十项实施方案”，做好“五大保障措施”，加大可控成本费用压缩力度，严格控制非生产性支出，大幅压减5项费用和其他管理支出，确保上市业务油气操作成本和完全成本、未上市变动成本占收入比率硬下降。</p>
+ 
+ <p>　　持续推进低成本发展战略。发挥以财务管理为中心的管理效能，认真研究“财务三张表”，坚持控投降本，有保有压，将有限的资金用在保油气稳产、保安全环保、保效益增长上，建立低油价下的成本效益倒逼机制，坚持效益优先、先算后干，持续优化油田开发方案，降低措施作业等施工成本，加大材料、水电等大宗成本控制力度。2020年，力争用电量同比下降3%以上，节约用电成本2.5亿元；实施物资采购成本控制，物资采购资金节约率力争达到10%以上。</p>
+ 
+ <p>　　推动改革重点领域攻坚有新突破。大庆钻探工程公司深化改革，加快富余人员转岗培训与劳务输出步伐，目前已有2600人完成培训。通过业务结构调整、机构人员压减、国内外市场拓展，力争2020年减亏5亿元以上。</p>
+ 
+ <p>　　前所未有的困难考验着石油人的意志和品格。大庆油田的发展从来都是在压力和挑战中前进的，也一定能继续在压力和挑战中不断前进。继承发扬大庆精神铁人精神，大庆油田一级带着一级干，在“战严冬、转观念、勇担当、上台阶”主题教育活动中，坚定必胜信念，聚力提质增效，激发全员智慧，汇聚全员力量，在“冬训”中求生存、强体魄，真正用出色业绩，检验贯彻落实习近平总书记贺信重要指示精神的实际成效。（<span style="font-family:楷体;">王广昀 大庆油田公司总经理</span>）</p>
+  
+ 
+ 
+ 
+             
+          </section>
+        </article>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+
+

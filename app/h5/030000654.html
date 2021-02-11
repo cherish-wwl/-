@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <title></title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      touch-action: pan-y;
+    }
+
+    html {
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+    }
+
+    .tabs {
+      display: flex;
+      /* border-bottom: 1px solid #ddd; */
+      align-items: center;
+      /* justify-content: space-between; */
+      padding: 0 18px;
+      overflow-x: auto;
+    }
+
+    .tabs .tab {
+      /* flex: 0.25; */
+      list-style: none;
+      padding: 10px 0;
+      text-align: center;
+      font-size: 18px;
+      color: #aaa;
+      cursor: pointer;
+      white-space: nowrap;
+      margin-right: 20px;
+    }
+
+    .tabs .tab:last-child {
+      text-align: right;
+    }
+
+    .tabs .tab:first-child {
+      text-align: left;
+    }
+
+    .tabs .tab.active {
+      color: #3172dc;
+      font-weight: bold;
+      position: relative;
+    }
+
+    .tabs .tab.active::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 4px;
+      background-color: #3172dc;
+      width: 30%;
+      border-radius: 4px;
+    }
+
+    .tabs-content {
+      padding: 30px 20px 25px 20px;
+    }
+
+    .tabs-content .title {
+      font-size: 20px;
+      font-family: Source Han Sans CN;
+      font-weight: bold;
+      color: #333333;
+      line-height: 30px;
+    }
+
+    .tabs-content .time {
+      margin: 10px 0 12px;
+      font-size: 12px;
+      font-family: Source Han Sans CN;
+      font-weight: 300;
+      color: #a5b0be;
+      line-height: 24px;
+      
+    }
+
+    .tabs-content .context {
+      font-size: 17px;
+      font-family: Source Han Sans CN;
+      font-weight: 400;
+      color: #333333;
+      line-height: 30px;
+      word-break: break-word;
+      text-align: justify;
+    }
+
+    img, table{
+      max-width: 100%;
+    }
+    .labels{
+      margin-top: 10px;
+    }
+    .labels .item {
+      font-size: 12px;
+      font-family: Source Han Sans CN;
+      font-weight: 300;
+      color: #f3a700;
+      line-height: 24px;
+      background-color: #f9edd4;
+      padding: 2px 10px;
+      margin-right: 10px;
+      border-radius: 9px;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="tabs-content">
+      <div class="tab-content">
+        <article> 
+          <h1 class="title">读懂“三张表” 盯住“硬骨头” 改革供给侧
+            西部钻探推进低成本战略变现</h1>
+          <p class="time">2020-06-16 07:22</p>
+          <section class="context">
+
+              <p style="text-align:left">　　<strong>中国石油网消息</strong>（记者刘德华 马宏旭）6月15日，西部钻探在塔里木市场的30部钻机完成&nbsp;“油改电”，燃料费用同比减少近20%；在准噶尔盆地的77部钻机全部实施第三方动力总包，燃料费同比降低15%以上。这是西部钻探用“边际分析、效益优先”财务思维调整耗能结构取得的成效。</p>
+ 
+ <p style="text-align:left">　　西部钻探坚持业财融合，用新财务管理思想检视生产经营全过程全要素，通过资产负债、损益、现金流量“三张表”，掌握整体实力、创效能力和经营活力，找准提质增效核心要素，平衡效率效益关系，盘活固定资本创效，压缩变动成本节流，全过程全要素推进低成本战略变现。</p>
+ 
+ <p style="text-align:left">　　读懂“三张表”。西部钻探强化学习读懂财务“三张表”，深入推进本量利分析、边际贡献等管理会计方法应用。深化全成本分析，明确人工成本、折旧折耗摊销和材料费、燃料费等降本方向，实现业财融合，变生产主体为经营主体。</p>
+ 
+ <p style="text-align:left">　　盯住“硬骨头”。紧盯人工成本、折旧折耗摊销，在提升装备资源动用率和全员劳动生产率上下功夫。内部跨单位调剂闲置钻机13部，钻机动用率91%，技术服务队伍100%动用。实行紧缺钻机、压裂机组租赁，推动“制造+服务”集约模式，投资规模缩小50%。玛湖区块优选27个管理团队，推进“分类定级+一队多机”管理模式。</p>
+ 
+ <p style="text-align:left">　　改革供给侧。抓住材料费、燃料费两大核心要素，对外传递压力、实行供给侧降本，对内提质增效、推动全过程降耗。推进集中采购、合同价格复议，建立“找准降价临界点算赢采购前、争取降价最高限细抠采购中、考核平均降幅指导采购后”的全生命周期效益采购机制，实施“工厂到现场”一站式配送，实现物资、工程服务类合同平均降幅11.6%和物资零库存管理。倒算成本，找准自有机组发电成本与能源替代成本费用平衡点，定额各型钻机台月燃料消耗，实行差异化、精准化能源供给，实施226井次“油改电”、23井次“油改气”作业，替代柴油4.87万吨。</p>
+  
+ 
+ 
+ 
+          </section>
+        </article>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+
+
