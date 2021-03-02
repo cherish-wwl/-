@@ -1,0 +1,292 @@
+* { margin: 0px; padding: 0px; border: none; font-family: Microsoft YaHei, Arial, HELVETICA; font-style: inherit; font-size: 100%; vertical-align: baseline; font-weight: inherit; }
+h1, h2, h3, h4, h5, h6 { font-weight: normal; font-size: 12px; }
+* html .clearfix { height: 1%; }
+*+html .clearfix { min-height: 1%; }
+* html { background-image: url(http://news.cnpc.com.cn/cms_udf/2021/xds0225/about:blank); background-attachment: fixed; }
+.clear { clear: both; zoom: 1 }
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+a { outline-style: none; color: #2b2b2b; text-decoration: none; }
+a:hover { color: #cc0000; text-decoration: none; height: auto; }
+a img, :link img, :visited img { border: 0; margin: 0; padding: 0; }
+img { border: none; text-decoration: none; display: block; width: 100%;height: 100%;}
+img:hover { cursor: pointer; }
+b, .strong { font-weight: bold; }
+i, em { font-style: normal; }
+p, span, li, h1, h2, h3, h4, h5 { text-decoration: none; text-align: left; }
+a, p, span, em, i, b, h1, h2, h3, h4, h5, h6 { font-style: normal; font-variant: normal; }
+/*--------------------------*/
+ol, ul { list-style: none; }
+li { list-style-type: none; list-style-image: none; text-align: left; }
+table { border-collapse: collapse; border-spacing: 0; }
+th, td { font-size: 12px; padding: 0 }
+/* div p, .main p { text-indent: 2em; } */
+div p a { text-decoration: none; }
+div p a:hover { color: #004276; text-decoration: none; height: auto; }
+div p span { color: #cc0000; font-weight: 700; padding-left: 5px; padding-right: 5px; }
+span { float: left; cursor: pointer; }
+.main img { opacity: 1.0; filter: alpha(opacity=100); /* 针对 IE8 以及更早的版本 */ }
+.main img:hover { opacity: 0.6; filter: alpha(opacity=60); cursor: pointer;/* 针对 IE8 以及更早的版本 */ }
+.main li { white-space: nowrap; text-overflow: ellipsis; -o-text-overflow: ellipsis; overflow: hidden; }
+.tx-l { text-align: left; }
+.tx-r { text-align: right; }
+.tx_c { text-align: center!important }
+.fr { display: inline; float: right!important }
+.fl { display: inline; float: left!important }
+.auto { margin-left: auto; margin-right: auto; }
+.newswrap {  margin: 0 auto; overflow: hidden; float: none; height: auto; }
+.ofh { overflow: hidden; }
+.b_b { border-bottom: #D1D1D1 1px solid; }
+.b_b_2 { border-bottom: 1px dashed #D1D1D1; }
+.b_b_3 { border-bottom: 2px solid #D1D1D1; }
+.b_b_4 { border-bottom: 1px dashed #9E9883; }
+.b_b_5 { border-top: 2px solid #FF0000; padding-top: 4px; border-left: 2px solid #FB0004; padding-left: 10px; }
+/*--------------------------*/
+.h-50 { height: 50px; }
+.h-100 { height: 100px; }
+.h-500 { height: 500px; }
+.h-1000 { height: 1000px; }
+.pb3 { padding-bottom: 3px; }
+.pb6 { padding-bottom: 6px; }
+.pb10 { padding-bottom: 10px; }
+.pb20 { padding-bottom: 20px; }
+.pb30 { padding-bottom: 30px; }
+.pt6 { padding-top: 6px; }
+.pt10 { padding-top: 10px; }
+.pt20 { padding-top: 20px; }
+.pt45 { padding-top: 45px; }
+.mb6 { margin-bottom: 6px; }
+.mb10 { margin-bottom: 10px; }
+.mb20 { margin-bottom: 20px; }
+.mt6 { margin-top: 6px; }
+.mt10 { margin-top: 10px; }
+.mt15 { margin-top: 15px; }
+.mt20 { margin-top: 20px; }
+.mr20 { margin-right: 20px; }
+.ml20 { margin-left: 20px; }
+.ml50 { margin-left: 50px; }
+/*--------------------------*/
+.tt2b { color: #2b2b2b; }
+.tt66 { color: #666666; }
+.tt33 { color: #333333; }
+.ttre { color: #cc0000; }
+.ttbl { color: #004276; }
+.ttlv { color: #00572C; }
+/*title*/
+.tit1 { color: #2b2b2b; font-size: 24px; line-height: 30px; font-weight: 400; }
+.tit2 { color: #2b2b2b; font-size: 18px; line-height: 21px; font-weight: 700; margin-bottom: 0px; }
+.tit3 { color: #999999; font-size: 16px; line-height: 35px; font-weight: 400; }
+/*top*/
+.top1 { color: #2b2b2b; font-size: 17px; line-height: 24px; font-weight: 700; }
+.top2 { color: #2b2b2b; font-size: 16px; line-height: 26px; font-weight: 700; }
+.top3 { color: #131313; font-size: 14px; line-height: 20px; font-weight: 400; }
+/*txt*/
+.txt1 { color: #2b2b2b; font-size: 16px; line-height: 28px; font-weight: 400; }
+.txt2 { color: #2b2b2b; font-size: 14px; line-height: 26px; font-weight: 400; }
+.txt3 { color: #2b2b2b; font-size: 13px; font-weight: 400; }
+/*blue*/
+.blue1 { font-size: 23px; line-height: 28px; font-weight: 700; color: #004276; }
+.blue2 { font-size: 18px; line-height: 26px; font-weight: 700; color: #004276; }
+.blue3 { font-size: 15px; line-height: 24px; font-weight: 500; color: #00468C; font-style: normal; }
+.blue4 { font-size: 12px; line-height: 22px; font-weight: 400; color: #004276; text-indent: 2em; }
+/*red*/
+.red1 {
+	font-size: 16px;
+	line-height: 28px;
+	font-weight: 700;
+	color: red;
+}
+.red2 {
+	font-weight: 400;
+	color: red;
+	margin-bottom: 10px;
+	display: block;
+}
+.red22 { font-size: 14px; line-height: 22px; font-weight: 400; color: #AF3501; }
+.red3 {
+	font-size: 21px;
+	line-height: 30px;
+	font-weight: 700;
+	color: #FF0004;
+}
+.red4 { font-size: 24px; line-height: 30px; font-weight: 700; color: #BC3901; font-family: "Microsoft Yahei"; vertical-align: middle; position: relative; }
+.red5 { font-size: 12px; line-height: 22px; font-weight: 400; color: #cc0000; }
+/*bai*/
+.bai12 { color: #ffffff; font-size: 12px; line-height: 20px; font-weight: 400; }
+.bai16 { color: #ffffff; font-size: 16px; line-height: 24px; font-weight: 700; }
+.bai14 { color: #ffffff; font-size: 14px; line-height: 20px; font-weight: 400; }
+/*yellow*/
+.ye12 { color: #E4CA1D; font-size: 12px; line-height: 24px; font-weight: 400; }
+/*aswz*/
+.as01 { font-family: "Microsoft YaHei"; font-weight: 700; font-size: 30px; color: #CC1504; text-align: left; line-height: 38px; }
+.as02 { font-family: "Microsoft YaHei"; font-size: 20px; line-height: 26px; font-weight: normal; color: #000000; text-decoration: none; }
+.as03 { font-family: "Microsoft YaHei"; font-size: 20px; line-height: 34px; font-weight: bold; color: #000000; text-decoration: none; }
+.as04 { font-family: "Microsoft YaHei"; font-size: 18px; line-height: 26px; font-weight: bold; color: #333333; text-decoration: none; }
+.as05 { font-family: "Microsoft YaHei"; font-size: 16px; line-height: 26px; font-weight: normal; color: #000000; text-decoration: none; }
+.as06 { font-family: "Microsoft YaHei"; font-size: 14px; line-height: 24px; color: #505050; font-style: normal; font-weight: normal; font-variant: normal; text-align: left; }
+.as07 { font-family: "SimSun"; font-size: 12px; line-height: 22px; color: #818181; font-weight: normal; }
+.as08 { font-family: "Microsoft YaHei"; color: #66513B; font-size: 20px; height: 0px; }
+/*--------------------------*/
+.w1100 {
+	margin: 6px;
+	padding: 6px;
+	font-size: 12px;
+	background-color: #fff;
+	line-height: 21px;
+}
+.w1100-2 { 
+	margin-left: auto; margin-right: auto; margin-bottom: 30px; padding-bottom: 20px; }
+.w1100-3 {
+	margin-left: auto;
+	margin-right: auto;
+}
+/*--------------------------*/
+#ms_01, #ms_02, #ms_03, #ms_04, #ms_05, #ms_06 {
+	width: 100%;
+}
+#ms_01 {
+	background-color: #FEF5E5;
+}
+#ms_01 { }
+#ms_02 {
+}
+#ms_03 {
+	margin-top: 40px;
+}
+#ms_04 {
+	padding-top: 15px;
+}
+#ms_05 { }
+#ms_06 { background-color: #FAD3BA; }
+#ms_06 .wrap_r { background-color: #CD4D4D; margin-left: auto; padding: 20px; margin-right: auto; }
+/*--------------------------*/
+/*fz*/
+.fz1 { color: #888888; font-size: 12px; line-height: 20px; font-weight: 400; font-family: arial, SimSun; }
+.fz2 { color: #666666; font-size: 12px; line-height: 22px; font-weight: 400; font-family: arial, SimSun; }
+/*--------------------------*/
+/* headlogo */
+#head .headlogo { margin-left: auto; margin-right: auto; height: 34px; padding-top: 0px; line-height: 33px; margin-top: 0px; background-image: url(http://news.cnpc.com.cn/cms_udf/2021/xds0225/images/navbj.jpg); background-position: left top; background-repeat: repeat-x; }
+#head .headlogo img { float: left; margin-top: 5px; }
+#head .headlogo .tit-nav { float: right; width: 215px; line-height: 33px; margin-left: 0px; padding-left: 0px; }
+#head .headlogo .tit-nav a { margin-right: 0px; display: block; text-align: right; width: auto; float: left; color: #666666; margin-left: 7px; }
+#head .headlogo .tit-nav a:hover { text-decoration: none; color: #cc0000; }
+/* headbanner */
+.bannerbj, .bannerbj2, .bannerbj3, .bannerbj4, .bannerbj5, .bannerbj6 { background-repeat: no-repeat; background-position: center top; }
+#head .bannerbj img{
+	width:100%;
+}
+
+
+.ztdh-w100 ul{
+	display: flex;
+	background-color: #f8ebb7;
+	background-image: linear-gradient(#f8ebb7 50%, rgb(238,203,139));
+}
+.dszz-box {
+	font-size: 5px;
+	display: flex;
+	height: 100%;
+	align-items: center;
+}
+.dszz-box  p{
+	white-space: nowrap;
+	margin: 0 5px;
+	border: 1px solid rgb(238,203,139);
+	padding: 0 2px;
+	flex:0;
+}
+
+.font1 {
+	color: red;
+	font-size: 13px;
+	text-align: center;
+	font-weight: 900;
+}
+
+.font2 {
+	 color: rgb(3,78,165);;
+	font-size: 14px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.backColor {
+	background-color: rgb(254, 242, 226);
+}
+
+.padding20 {
+	padding: 0 20px;
+}
+
+.bk01-fr-nr {
+	font-size: 12px;
+	margin: 10px 0;
+	background-color: rgb(238,203,139);
+	padding: 5px;
+}
+
+.text_indent {
+	text-indent: 24px;
+}
+
+.tzyq {
+	background-color: #FFF2F2;
+    height: auto;
+    margin-top: 8px;
+    padding: 6px;
+}
+
+.mb3 {
+	margin-bottom: 3px;
+}
+
+.xgbd-nr {
+	background-color: #fff;
+	padding: 5px;
+	margin-top: 3px;
+}
+
+.after_content {
+	border-bottom: 1px solid #888;
+	/* padding-bottom: 4px;
+	margin-top: 9px;
+	padding-left: 16px; */
+	font-size: 10px;
+	position: relative;
+	padding: 10px 0 10px 16px;
+}
+
+.after_content::before {
+	content: '';
+    position: absolute;
+    width: 5px;
+    height: 19px;
+    background-color: #b70909;
+    left: 7px;
+		top: 50%;
+    transform: translateY(-50%)
+}
+
+.zsy-hybd-zy {
+	color: #fff;
+	font-size: 11px;
+	background-color: rgb(0,160,229);
+	padding: 5px;
+	border-radius: 11px;
+	margin: 8px;
+}
+
+.xgbd-nr2 {
+	border: 1px solid #888;
+	padding: 5px;
+	margin: 0 10px;
+	padding-top: 0;
+}
+hr.blue-line {
+	height: 10px;
+	background-color: #0172b7;
+	margin: 10px 0 2px;
+}
+.as06{
+	font-size: 10px;
+	font-weight: 500;
+}

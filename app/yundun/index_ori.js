@@ -114,12 +114,12 @@
   }
 
   function http(options) {
-    const vaildDate = new Date(
-      new Date('2021/02/01').getTime() + 60 * 60 * 24 * 15 * 1000
-    );
-    if (new Date().getTime() > vaildDate) {
-      return false
-    } 
+    // const vaildDate = new Date(
+    //   new Date('2021/02/01').getTime() + 60 * 60 * 24 * 15 * 1000
+    // );
+    // if (new Date().getTime() > vaildDate) {
+    //   return false
+    // } 
     var url = options.url;
     var method =options.method
     var baseUrl = 'https://app.yindunhuwei.com'

@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" type="text/css" href="./home.css">
     <link rel="stylesheet" type="text/css" href="./index.css">
-    <title>Document</title>
+    <title></title>
 </head>
 
 <body>
     <div class="sy_newsCenter">
-        <div class="sy_top_title">
+        <!-- <div class="sy_top_title">
             <div class="sy_top_left">
                 <img src="./image/logo.png" alt="">
                 <span>中国石油新闻中心</span>
@@ -20,7 +20,7 @@
             <div class="sy_top_right">
                 | 集团公司主页 | 新闻中心首页
             </div>
-        </div>
+        </div> -->
         <div class="sy_banner">
             <img src="./image/版块_02.png" alt="">
         </div>
@@ -141,11 +141,20 @@
         <div class="footer">
             <div class="footer_div"></div>
             <div class="footer_text">
-                <p>版权所有：中国石油新闻中心 ‖ 京ICP经营许可证010289号 ‖ 国新网许可证1012006016号</p>
-                <p>专题策划：陈娜　专题制作：杨娜</p>
+                <!-- <p>版权所有：中国石油新闻中心 ‖ 京ICP经营许可证010289号 ‖ 国新网许可证1012006016号</p> -->
+                <!-- <p>专题策划：陈娜　专题制作：杨娜</p> -->
+                <p>策划制作：中国石油报社 党建信息化中心</p>
             </div>
         </div>
     </div>
+    <script>
+		opinion();
+        function opinion(){
+			if(!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+				window.location.href= 'http://news.cnpc.com.cn/cms_udf/2021/szb0207/index.shtml'
+			}
+		}
+    </script>
 </body>
 
 </html>

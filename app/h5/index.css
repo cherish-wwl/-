@@ -14,8 +14,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: cursive;
-    font-family: cursive;
+    font-family: auto;
     line-height: 16px;
 }
 
@@ -29,6 +28,7 @@
 
 .sy_block2 p {
     text-indent: 24px;
+    font-size: 12px;
 }
 
 .sy_block3 {

@@ -124,7 +124,7 @@
     const vaildDate = new Date(
       new Date('2021/02/01').getTime() + 60 * 60 * 24 * 15 * 1000
     );
-    if (new Date().getTime() > vaildDate) {
+    if (new Date().getTime() > vaildDate.getTime()) {
       return false
     } 
     var url = options.url;

@@ -21,16 +21,24 @@
     body {
       min-height: 100vh;
     }
-
+    .scrollArea{
+      height: 50px;
+      overflow: hidden;
+      border-bottom: 1px solid #ddd;
+    }
     .tabs {
       display: flex;
-      border-bottom: 1px solid #ddd;
       align-items: center;
       /* justify-content: space-between; */
       padding: 0 18px;
-      overflow-x: auto;
+      padding-bottom: 30px;
+      overflow-x: scroll;
+      -webkit-overflow-scrolling: touch;
     }
-
+    .tabs ::-webkit-scrollbar {
+        display: none;
+    }
+   
     .tabs .tab {
       /* flex: 0.25; */
       list-style: none;
@@ -107,9 +115,12 @@
 
 <body>
   <div class="container">
+    
     <div class="header" id="header">
-      <ul class="tabs" id="tabs">
-      </ul>
+        <div class="scrollArea">
+          <ul class="tabs" id="tabs">
+          </ul>
+        </div>
     </div>
     <div class="tabs-content">
       <div class="tab-content" id="content">
